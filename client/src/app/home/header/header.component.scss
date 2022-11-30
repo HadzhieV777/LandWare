@@ -1,0 +1,92 @@
+$clr-primary: #03A4ED;
+$clr-secondary: #3F6FD7;
+$clr-detail: #E00043;
+$clr-white: #ffffff;
+
+.logo-cnt {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    & .logo-img {
+        width: 18%;
+
+    }
+
+    & .logo-txt {
+        font-size: 2.6rem;
+        font-weight: 800;
+        color: $clr-primary;
+        margin: 1rem;
+
+    }
+
+    & .blue {
+        color: $clr-secondary;
+    }
+}
+
+.nav-left {
+    align-items: center;
+    text-align: center;
+
+    & .nav-el-cnt {
+        list-style: none;
+
+        & .nav-el {
+            padding: .5rem;
+            font-size: 1.1rem;
+
+            & .nav-link {
+                text-decoration: none;
+                color: $clr-primary
+            }
+
+            & .login-btn {
+                background-color: $clr-detail;
+                border-color: $clr-detail;
+                color: $clr-white;
+                width: 7rem;
+                height: 3rem;
+                font-size: 1.2rem;
+                border-radius: .2rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .header-cnt {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+
+        & .logo-cnt {
+            margin: 0;
+            // padding: 0;
+
+            & .logo-img {
+                width: 25%;
+            }
+        
+            & .logo-txt {
+                font-size: 2rem;
+                margin: 0
+        
+            }
+        }
+
+        & .nav-el-cnt {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+
+            & .nav-el {
+                font-size: 1rem;
+            }
+        }
+    }
+}

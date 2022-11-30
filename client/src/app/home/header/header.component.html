@@ -1,15 +1,15 @@
 <header class="header-cnt">
-  <div class="logo-cnt">
+  <div class="logo-cnt" routerLink="/">
     <img class="logo-img" src="../../../assets/site-logo.png" alt="Landware logo" />
-    <p class="logo-txt">Land<span class="blue">Ware</span></p>
+    <p  class="logo-txt">Land<span class="blue">Ware</span></p>
   </div>
   <nav class="nav-left">
     <ul class="nav-el-cnt">
-        <li class="nav-el"><a href="" class="nav-link">Services</a></li>
-        <li class="nav-el"><a href="" class="nav-link">About</a></li>
-        <li class="nav-el"><a href="" class="nav-link">Dashboard</a></li>
-        <li class="nav-el"><a href="" class="nav-link">Resources</a></li>
-        <li class="nav-el"><button class="login-btn">Sign up</button></li>
+        <li class="nav-el"><a routerLink="/services" class="nav-link">Services</a></li>
+        <li class="nav-el"><a routerLink="/about" class="nav-link">About</a></li>
+        <li class="nav-el"><a routerLink="/dashboard" class="nav-link">Dashboard</a></li>
+        <li class="nav-el"><a routerLink="/resources" class="nav-link">Resources</a></li>
+        <li class="nav-el"><button class="login-btn" routerLink="/login" >Sign up</button></li>
     </ul>
   </nav>
 </header>

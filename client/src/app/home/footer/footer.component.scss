@@ -1,5 +1,6 @@
 $clr-white: #ffffff;
 $clr-blue: #4b8ef1;
+$clr-blue-dark: #3F6FD7;
 
 .footer-cnt {
     background-image: url("../../../assets/images/footer-bg.png");
@@ -50,19 +51,54 @@ $clr-blue: #4b8ef1;
 
         & .cnt {
 
-            & .links-title {}
+            & .links-title {
+                color: $clr-white;
+            }
 
             & .links-list {
                 list-style-type: none;
+                padding: 0;
 
                 & .link-el {
 
-                    & .link {}
+                    & .link {
+                        text-decoration: none;
+                        color: $clr-white;
+
+                        &:hover {
+                            color: $clr-blue-dark;
+                        }
+                    }
                 }
             }
 
+            & .social-icons-cnt {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            & .email {
+                color: $clr-white;
+
+                & a {
+                    color: $clr-blue-dark;
+                    text-decoration: none;
+                }
+            }
         }
     }
 
+    // copyright
+    #copyright {
+        color: $clr-white;
+
+        & .copyright-txt {
+
+            & a {
+                color: $clr-blue-dark;
+                text-decoration: none;
+            }
+        }
+    }
 
 }

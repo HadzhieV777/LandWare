@@ -37,6 +37,7 @@ $clr-white: #ffffff;
 
     & .nav-el-cnt {
         list-style: none;
+        padding: 0;
 
         & .nav-el {
             padding: .5rem;
@@ -76,18 +77,17 @@ $clr-white: #ffffff;
     .header-cnt {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
-
+        justify-content: center;
 
         & .logo-cnt {
-            margin: 0;
+            justify-content: left;
 
             & .logo-img {
-                width: 20%;
+                width: 14%;
             }
 
             & .logo-txt {
-                font-size: 2rem;
+                font-size: 1.5rem;
                 margin: 0
             }
         }
@@ -103,7 +103,7 @@ $clr-white: #ffffff;
 
                 & .login-btn {
                     width: 5rem;
-                    height: 2.5rem;
+                    height: 2rem;
                     font-size: .9rem;
                 }
 
@@ -126,11 +126,11 @@ $clr-white: #ffffff;
             padding: 0;
 
             & .logo-img {
-                width: 14%;
+                width: 12%;
             }
 
             & .logo-txt {
-                font-size: 2.5rem;
+                font-size: 1.8rem;
                 margin: 0
             }
         }
@@ -141,11 +141,11 @@ $clr-white: #ffffff;
         & .nav-el-cnt {
 
             & .nav-el {
-                font-size: 1rem;
+                font-size: .9rem;
 
                 & .login-btn {
                     width: 5.4rem;
-                    height: 2.5rem;
+                    height: 2rem;
                     font-size: 1rem;
                     border-radius: .3rem;
                 }
@@ -166,7 +166,7 @@ $clr-white: #ffffff;
             }
 
             & .logo-txt {
-                font-size: 2.7rem;
+                font-size: 2.2rem;
             }
         }
     }
@@ -176,12 +176,12 @@ $clr-white: #ffffff;
         & .nav-el-cnt {
 
             & .nav-el {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
 
                 & .login-btn {
-                    width: 6rem;
-                    height: 3rem;
-                    font-size: 1.2rem;
+                    width: 6.2rem;
+                    height: 2.8rem;
+                    font-size: 1.3rem;
                     border-radius: .3rem;
                 }
             }

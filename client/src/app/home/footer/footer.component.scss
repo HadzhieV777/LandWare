@@ -1,3 +1,6 @@
+$clr-white: #ffffff;
+$clr-blue: #4b8ef1;
+
 .footer-cnt {
     background-image: url("../../../assets/images/footer-bg.png");
     background-position: center top;
@@ -7,4 +10,59 @@
     padding-top: 19rem;
     padding-bottom: 3.7rem;
     text-align: center;
+
+    // NW SECTION
+    & #newsletter {
+
+        & .title {
+            color: $clr-white;
+        }
+
+        & .email {
+            font-size: .9rem;
+            color: $clr-white;
+            outline: none;
+            height: 2.8rem;
+            border: none;
+            background-color: transparent;
+            border-bottom: 1px solid $clr-white;
+            width: 80%;
+        }
+
+        & .nw-btn {
+            height: 2.8rem;
+            border-radius: 1.5rem;
+            border: 1px solid $clr-white;
+            background-color: transparent;
+            color: $clr-white;
+            width: 80%;
+            transition: all .5s;
+            margin: 1rem;
+
+            &:hover {
+                background-color: $clr-white;
+                color: $clr-blue;
+            }
+        }
+    }
+
+    & #links {
+
+        & .cnt {
+
+            & .links-title {}
+
+            & .links-list {
+                list-style-type: none;
+
+                & .link-el {
+
+                    & .link {}
+                }
+            }
+
+        }
+    }
+
+
 }

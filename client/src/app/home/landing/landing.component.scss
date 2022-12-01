@@ -24,7 +24,7 @@ $clr-white: #ffffff;
 }
 
 .section {
-    padding-bottom: 3rem;
+    margin-bottom: 3rem;
 }
 
 // HERO SECTION 
@@ -88,6 +88,24 @@ $clr-white: #ffffff;
 
 }
 
+// BENEFITS SECTION
+#benefits {
+
+
+    & .benefits-img {
+        width: 100%;
+        border-radius: .7rem;
+    }
+
+    & .benefits-txt {
+        text-align: center;
+    }
+}
+
+#faq {
+    text-align: center;
+}
+
 @media screen and (min-width: 768px) {
     .main-cnt {
         margin: 0 2.3rem;
@@ -98,18 +116,24 @@ $clr-white: #ffffff;
         display: flex;
 
         & .hero-banner {
-            width: 60%;
+            width: 70vw;
+            height: 45vh;
         }
 
         & .hero-txt {
-            width: 35%;
-            // padding: 0;
             display: flex;
             flex-direction: column;
             justify-content: left;
-            margin-top: 1.4rem;
             justify-content: left;
             text-align: left;
+
+            & .title {
+                margin-top: 4rem;
+            }
+
+            & .paragraph {
+                font-size: .8rem;
+            }
 
             & .hero-btn {
                 margin: 0;
@@ -118,7 +142,7 @@ $clr-white: #ffffff;
     }
 
     .title {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         line-height: 1.2;
         letter-spacing: 1.4;
         margin: 0;
@@ -167,6 +191,22 @@ $clr-white: #ffffff;
         }
 
     }
+
+    // BENEFITS SECTION
+    #benefits {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+
+        & .benefits-img {
+            width: 45vw;
+        }
+
+        & .benefits-txt {
+            text-align: left;
+            margin-top: 1rem;
+        }
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -178,17 +218,19 @@ $clr-white: #ffffff;
     #hero {
 
         & .hero-banner {
-            width: 64%;
+            height: 55vh;
         }
 
         & .hero-txt {
-            width: 35%;
-            margin-top: 3rem;
+
+            & .paragraph {
+                font-size: .9rem;
+            }
 
             & .hero-btn {
                 width: 8.5rem;
                 height: 3.2rem;
-                font-size: 1.5rem;
+                font-size: 1.3rem;
                 border-radius: .2rem;
 
             }
@@ -197,19 +239,20 @@ $clr-white: #ffffff;
 
     .title {
         margin: 0;
-        font-size: 1.8rem;
+        font-size: 1.7rem;
         letter-spacing: 2.4;
         line-height: 1.2;
         font-weight: 800;
     }
 
     .paragraph {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .section {
         max-width: 1024px;
         margin: 0 auto;
+        margin-bottom: 5rem;
     }
 
     // SERVICES SECTION 
@@ -244,35 +287,21 @@ $clr-white: #ffffff;
         margin: 0 5rem;
     }
 
-    // HERO SECTION
-    #hero {
-        align-items: center;
-        justify-content: center;
-
-        & .hero-banner {
-            width: 63%;
-        }
-
-        & .hero-txt {
-            width: 34%;
-            // margin-top: 7rem;
-
-            & .hero-btn {
-                width: 9.6rem;
-                height: 4.3rem;
-                font-size: 1.8rem;
-                border-radius: .2rem;
-
-            }
-        }
-    }
-
     .title {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
     }
 
     .paragraph {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
+    }
+
+    // HERO SECTION
+    #hero {
+
+        & .hero-banner {
+            height: 66vh;
+        }
+
     }
 
     // SERVICES SECTION 
@@ -281,20 +310,38 @@ $clr-white: #ffffff;
         & .services-cnt {
             & .service {
                 & .service-ico {
-                    width: 7.6rem;
-                    height: 7.1rem;
+                    width: 6rem;
+                    height: 5.8rem;
                 }
 
                 & .service-heading {
-                    font-size: 1.5rem;
+                    font-size: 1.2rem;
                 }
 
                 & .service-paragraph {
-                    font-size: 1.2rem;
+                    font-size: 1rem;
                 }
             }
 
         }
-
     }
+
+    // BENEFITS SECTION
+    #benefits {
+        gap: 3rem;
+
+        & .benefits-img {
+            width: 35vw;
+            height: 45vh;
+        }
+
+        & .benefits-txt {
+            margin-top: 2rem;
+
+            & .paragraph {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
 }

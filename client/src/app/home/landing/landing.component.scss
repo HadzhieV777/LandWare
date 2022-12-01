@@ -3,6 +3,31 @@ $clr-blue-main: #03A4ED;
 $clr-purp-detail: #E00043;
 $clr-white: #ffffff;
 
+// MAIN
+
+.title {
+    // padding: 2rem .2rem;
+
+    // font-family: 
+    & .blue {
+        color: $clr-blue-main;
+    }
+
+    & .purp {
+        color: $clr-purp-detail;
+    }
+}
+
+.paragraph {
+    line-height: 1.4;
+    letter-spacing: .5px;
+}
+
+.section {
+    padding-bottom: 3rem;
+}
+
+// HERO SECTION 
 #hero {
     text-align: center;
     margin: 1rem auto;
@@ -33,21 +58,34 @@ $clr-white: #ffffff;
     }
 }
 
-.title {
+// SERVICES SECTION 
+#services {
+    $services-bg-clr: #D9ECFE;
 
-    // font-family: 
-    & .blue {
-        color: $clr-blue-main;
+    background-color: $services-bg-clr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    & .services-cnt {
+        list-style-type: none;
+        padding: 0;
+
+        & .service {
+
+            & .service-ico {
+                width: 7.6rem;
+                height: 7.1rem;
+            }
+
+            & .service-paragraph {
+                padding-bottom: .5rem;
+            }
+        }
+
     }
 
-    & .purp {
-        color: $clr-purp-detail;
-    }
-}
-
-.paragraph {
-    line-height: 1.4;
-    letter-spacing: .5px;
 }
 
 @media screen and (min-width: 768px) {
@@ -55,15 +93,16 @@ $clr-white: #ffffff;
         margin: 0 2.3rem;
     }
 
+    // HERO SECTION
     #hero {
         display: flex;
 
         & .hero-banner {
-            width: 58%;
+            width: 60%;
         }
 
         & .hero-txt {
-            width: 40%;
+            width: 35%;
             // padding: 0;
             display: flex;
             flex-direction: column;
@@ -79,7 +118,7 @@ $clr-white: #ffffff;
     }
 
     .title {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         line-height: 1.2;
         letter-spacing: 1.4;
         margin: 0;
@@ -91,14 +130,51 @@ $clr-white: #ffffff;
         padding: 0;
         letter-spacing: .5px;
     }
-}
 
+    // SERVICES SECTION 
+    #services {
+
+        & .title {
+            margin-top: 4rem;
+            margin-bottom: 4rem;
+            width: 50%;
+        }
+
+        & .services-cnt {
+            padding-left: 2rem;
+            padding-right: 2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+
+            & .service {
+
+
+                & .service-ico {
+                    width: 4.8rem;
+                    height: 4.2rem;
+                }
+
+                & .service-heading {
+                    font-size: .9rem;
+                }
+
+                & .service-paragraph {
+                    font-size: .7rem;
+                }
+            }
+
+        }
+
+    }
+}
 
 @media screen and (min-width: 1024px) {
     .main-cnt {
         margin: 0 4rem;
     }
 
+    // HERO SECTION
     #hero {
 
         & .hero-banner {
@@ -121,14 +197,45 @@ $clr-white: #ffffff;
 
     .title {
         margin: 0;
-        font-size: 1.9rem;
+        font-size: 1.8rem;
         letter-spacing: 2.4;
         line-height: 1.2;
         font-weight: 800;
     }
 
     .paragraph {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+    }
+
+    .section {
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+
+    // SERVICES SECTION 
+    #services {
+        & .title {
+            width: 50%;
+        }
+
+        & .services-cnt {
+            & .service {
+                & .service-ico {
+                    width: 5.5rem;
+                    height: 5rem;
+                }
+
+                & .service-heading {
+                    font-size: 1.2rem;
+                }
+
+                & .service-paragraph {
+                    font-size: .9rem;
+                }
+            }
+
+        }
+
     }
 }
 
@@ -137,15 +244,17 @@ $clr-white: #ffffff;
         margin: 0 5rem;
     }
 
+    // HERO SECTION
     #hero {
         align-items: center;
         justify-content: center;
+
         & .hero-banner {
-            width: 50%;
+            width: 63%;
         }
 
         & .hero-txt {
-            // width: 35%;
+            width: 34%;
             // margin-top: 7rem;
 
             & .hero-btn {
@@ -159,10 +268,33 @@ $clr-white: #ffffff;
     }
 
     .title {
-        font-size: 2.6rem;
+        font-size: 2.5rem;
     }
 
     .paragraph {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
+    }
+
+    // SERVICES SECTION 
+    #services {
+
+        & .services-cnt {
+            & .service {
+                & .service-ico {
+                    width: 7.6rem;
+                    height: 7.1rem;
+                }
+
+                & .service-heading {
+                    font-size: 1.5rem;
+                }
+
+                & .service-paragraph {
+                    font-size: 1.2rem;
+                }
+            }
+
+        }
+
     }
 }

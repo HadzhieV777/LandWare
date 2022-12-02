@@ -12,6 +12,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
 import { HomeModule } from './home/home.module';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +24,7 @@ import { HomeModule } from './home/home.module';
     AngularFirestoreModule,
     AngularFireAuthModule,
     HomeModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent],

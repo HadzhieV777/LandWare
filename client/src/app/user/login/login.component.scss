@@ -2,8 +2,15 @@ $clr-white: rgba(255,255,255,0.3);
 $clr-primary: #03A4ED;
 $clr-secondary: #3F6FD7;
 $clr-detail: #E00043;
-// $clr-white: #ffffff;
+$clr-white-simple: #ffffff;
 
+
+$form-box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+$text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+$input-shadow: 4px 4px 60px rgba(0,0,0,0.2);
+$input-hover-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
+$placeholder-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+$drop-shadow: 10px 10px 60px -8px rgba(0,0,0,0.2);
 
 .form-cnt {
     height: 60vh;
@@ -19,31 +26,37 @@ $clr-detail: #E00043;
 form {
   background: $clr-white;
   padding: 3em;
-  height: 320px;
-  border-radius: 20px;
+  height: 22.5rem;
+  border-radius: 1.3rem;
   border-left: 1px solid $clr-white;
   border-top: 1px solid $clr-white;
   backdrop-filter: blur(10px);
-  box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+  box-shadow: $form-box-shadow;
   text-align: center;
   position: relative;
   transition: all 0.2s ease-in-out;
   
   p {
-    font-weight: 500;
-    color: $clr-secondary;
+    font-weight: 600;
+    color: $clr-primary;
     opacity: 0.7;
-    font-size: 1.4rem;
+    font-size: 2rem;
     margin-top: 0;
-    margin-bottom: 60px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 3.8rem;
+    text-shadow: $text-shadow;
+  }
+
+  span {
+    color: rgba(0,0,0,0.4);
+    font-size: .8rem;
+    font-weight: 600;
   }
   
   a {
     text-decoration: none;
     color: $clr-secondary;
     font-size: .8rem;
-    
+
     &:hover {
       text-shadow: 2px 2px 6px #00000040;
     }
@@ -52,27 +65,27 @@ form {
       text-shadow: none;
     }
   }
+
   
   input {
     background: transparent;
-    width: 200px;
+    width: 13rem;
     padding: 1em;
     margin-bottom: 2em;
     border: none;
     border-left: 1px solid $clr-white;
     border-top: 1px solid $clr-white;
-    border-radius: 5000px;
+    border-radius: .4rem;
     backdrop-filter: blur(5px);
-    box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
-    color: $clr-detail;
-    font-family: Montserrat, sans-serif;
+    box-shadow: $input-shadow;
+    color: $clr-secondary;
     font-weight: 500;
     transition: all 0.2s ease-in-out;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    text-shadow: $text-shadow;
     
     &:hover {
       background: rgba(255,255,255,0.1);
-      box-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
+      box-shadow: $input-hover-shadow;
     }
     
     &[type="email"],
@@ -80,13 +93,13 @@ form {
       
       &:focus {
         background: rgba(255,255,255,0.1);
-        box-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
+        box-shadow: $input-hover-shadow;
       }
     }
     
     &[type="button"] {
-      margin-top: 10px;
-      width: 150px;
+      margin-top: .6rem;
+      width: 9.4rem;
       font-size: 1rem;
       
       &:hover {
@@ -94,7 +107,8 @@ form {
       }
       
       &:active {
-        background: rgba(255,255,255,0.2);
+        background: $clr-primary;
+        color: $clr-white-simple;
       }
     }
   }
@@ -107,57 +121,53 @@ form {
 ::placeholder {
   font-family: Montserrat, sans-serif;
   font-weight: 400;
-  color: $clr-detail;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  color: $clr-secondary;
+  text-shadow: $placeholder-shadow;
 }
-
-// ::-ms-value {
-//     color: $clr-detail;
-// }
 
 .drop {
   background: $clr-white;
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
+  backdrop-filter: blur(.6rem);
+  border-radius: .6rem;
   border-left: 1px solid $clr-white;
   border-top: 1px solid $clr-white;
-  box-shadow: 10px 10px 60px -8px rgba(0,0,0,0.2);
+  box-shadow: $drop-shadow;
   position: absolute;
   transition: all 0.2s ease;
   
   &-1 {
-    height: 80px;
-    width: 80px;
+    height: 5rem;
+    width: 5rem;
     top: -20px;
     left: -40px;
     z-index: -1;
   }
   
   &-2 {
-    height: 80px;
-    width: 80px;
+    height: 5rem;
+    width: 5rem;
     bottom: -30px;
     right: -10px;
   }
   
   &-3 {
-    height: 100px;
-    width: 100px;
+    height: 6.3rem;
+    width: 6.3rem;
     bottom: 120px;
     right: -50px;
     z-index: -1;
   }
   
   &-4 {
-    height: 120px;
-    width: 120px;
+    height: 7.5rem;
+    width: 7.5rem;
     top: -60px;
     right: -60px;
   }
   
   &-5 {
-    height: 60px;
-    width: 60px;
+    height: 3.8;
+    width: 3.8;
     bottom: 170px;
     left: 90px;
     z-index: -1;

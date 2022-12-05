@@ -13,6 +13,7 @@ import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
 import { HomeModule } from './home/home.module';
 import { UserModule } from './user/user.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,7 +25,8 @@ import { UserModule } from './user/user.module';
     AngularFirestoreModule,
     AngularFireAuthModule,
     HomeModule,
-    UserModule
+    UserModule,
+    DashboardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

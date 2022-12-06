@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-
+import { EstatesComponent } from './estates/estates.component';
+import { DashboardRoutingModule } from './estate-routing.module';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  declarations: [EstatesComponent],
+  imports: [CommonModule, DashboardRoutingModule],
 })
-export class EstateModule { }
+export class EstateModule {}

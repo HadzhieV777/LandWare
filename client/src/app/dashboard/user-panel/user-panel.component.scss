@@ -1,0 +1,257 @@
+$clr-primary: #03A4ED;
+$clr-secondary: #3F6FD7;
+$clr-lightblue: #D9ECFE;
+$clr-detail: #E00043;
+$clr-white: #ffffff;
+$clr-black-font: #2A2A2A;
+
+
+.function-icon,
+.metric-icon {
+    width: 10%;
+}
+
+.functions-list,
+.metric-l,
+.banner-ctn,
+.user-funcs-ctn,
+.metrics-upper,
+.metrics-lower {
+    border-radius: .4rem;
+    background-color: $clr-white;
+    margin: .8rem;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+#user-pnl {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-ctn {
+
+    justify-content: space-around;
+
+    & .greeting {
+        font-weight: 800;
+    }
+
+    & .secondary {
+        font-weight: 600;
+    }
+}
+
+.function {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem;
+}
+
+.function.blue {
+    background-color: $clr-lightblue;
+}
+
+.function-title {
+    margin-right: .5rem;
+    font-weight: 500;
+    font-size: .8rem;
+    color: $clr-black-font;
+}
+
+.metrics-upper-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    overflow: hidden;
+    background-color: #E7EBEF;
+}
+
+.metric-u {
+    padding: 1rem;
+    border: .3rem solid #E7EBEF;
+    border-radius: .7rem;
+    overflow: hidden;
+    background-color: $clr-white;
+
+    & .metric-title {
+        font-weight: 600;
+    }
+
+    & .metric-counter {
+        font-weight: 800;
+    }
+
+    & .metric-icon {
+        width: 29%;
+    }
+}
+
+.metric-l {
+    display: flex;
+    padding: .5rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    & .metric-icon {
+        height: 50%;
+    }
+
+    & .metric-counter {
+        font-weight: 800;
+    }
+
+    & .metric-btn {
+        background-color: $clr-secondary;
+        border-color: $clr-secondary;
+        color: $clr-white;
+
+        width: 7rem;
+        height: 3rem;
+        font-size: 1.2rem;
+        border-radius: .2rem;
+        transition: all .5s;
+
+        &:hover {
+            background-color: $clr-detail;
+            border-color: $clr-detail;
+            cursor: pointer;
+        }
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    #user-pnl {
+        width: 75vw;
+        margin-left: 5rem;
+    }
+
+    .banner-ctn {
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        width: 91%;
+
+        & .greeting {
+            font-size: 1.3rem;
+        }
+
+        & .secondary {
+            font-weight: 500;
+        }
+    }
+
+    .secondary {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .functions-list {
+        // margin: 0 90;
+        display: grid;
+        grid-template-rows: repeat(1, 2fr);
+        gap: 2.6rem;
+
+    }
+
+    .function.blue {
+        background-color: $clr-white;
+    }
+
+    .function-icon {
+        width: 14%;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    #user-pnl {
+        width: 60vw;
+        margin-top: 2rem;
+        margin-left: 19rem;
+    }
+
+    .function-title {
+        font-size: 1rem;
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+    #user-pnl {
+        margin-left: 23rem;
+    }
+
+    .banner-ctn {
+        width: 94%;
+    }
+
+    .metrics-upper-list {
+        .metric-u {
+            .metric-icon {
+                width: 22%;
+            }
+        }
+    }
+
+    .metrics-lower-list {
+        & .metric-l {
+
+            & .metric-icon {
+                width: 8%;
+            }
+        }
+
+    }
+}
+
+@media screen and (min-width: 1920px) {
+
+    .banner-ctn {
+        width: 95%;
+    }
+
+    .user-funcs-ctn {
+       height: 90%;
+       width: 70%;
+    }
+
+    .function-icon {
+        width: 10%;
+    }
+
+    .metrics-lower-list {
+        & .metric-l {
+
+            & .metric-icon {
+                width: 6%;
+            }
+        }
+
+    }
+
+    .metrics-upper-list {
+        .metric-u {
+            .metric-icon {
+                width: 20%;
+            }
+        }
+    }
+
+}

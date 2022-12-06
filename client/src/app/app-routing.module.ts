@@ -21,6 +21,10 @@ const routes: Routes = [
     loadChildren: () => import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
   {
+    path: 'properties',
+    loadChildren: () => import('./estate/estate.module').then((m) => m.EstateModule),
+  },
+  {
     path: '**',
     pathMatch: 'full',
     component: NotFoundComponent,

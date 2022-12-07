@@ -1,0 +1,180 @@
+$clr-white-dark: rgb(207, 205, 205);
+$clr-blue: #3F6FD7;
+$clr-white: #fff;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: #2A2A2A;
+}
+
+#add-prop {
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    & .title {
+        margin: 1rem;
+    }
+
+}
+
+.single-prop {
+    border: 2px solid $clr-white-dark;
+    border-radius: .5rem;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 1rem;
+    overflow: hidden;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    & .prop-img {
+        width: 100%;
+    }
+
+    & .prop-info {
+        margin: 0 .5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        & .aditional-data {
+            margin-bottom: .5rem;
+        }
+
+    }
+}
+
+#add-btn {
+    height: 2.8rem;
+    border-radius: 1.5rem;
+    border: 2px solid $clr-blue;
+    background-color: transparent;
+    color: $clr-blue;
+    width: 90%;
+    transition: all .5s;
+    margin: 1rem;
+    font-weight: 600;
+    &:hover {
+        background-color: $clr-white;
+        cursor: pointer;
+    }
+}
+
+.prop-zip{
+    font-weight: 600;
+}
+
+.prop-extras-ctn {
+    margin-top: .7rem;
+    margin-bottom: .7rem;
+    display: flex;
+    flex: row;
+    justify-content: left;
+    gap: .5rem;
+}
+
+.prop-extra{
+    border: 2px solid $clr-white;
+    color: $clr-white;
+    background-color: #3F6FD7;
+    border-radius: .5rem;
+    padding: .5rem;
+    // margin: .2rem;
+}
+
+.price{font-weight: 600;}
+
+.no-props {
+    margin: 1rem;
+}
+
+
+@media screen and (min-width: 768px) {
+    .single-prop {
+        display: flex;
+        flex-direction: row;
+        align-items: left;
+    }
+
+    .single-prop {
+
+        & .prop-img {
+            width: 30%;
+        }
+    
+        & .prop-info {
+            width: 100%;
+        }
+    }
+
+    #add-btn {
+        max-width: 420px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #add-prop {
+        width: 65%;
+        margin-top: 2rem;
+        margin-left: 19rem;
+    }
+
+    .single-prop {
+
+        & .prop-img {
+            width: 25%;
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    #add-prop {
+        margin-left: 23rem;
+        width: 55%;
+    }
+    .single-prop {
+
+        & .prop-img {
+            width: 20%;
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    #add-prop {
+        margin-left: 28rem;
+        width: 55%;
+    }
+
+    .single-prop {
+
+        & .prop-img {
+            width: 16%;
+        }
+    }
+}

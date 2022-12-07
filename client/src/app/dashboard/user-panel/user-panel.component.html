@@ -15,7 +15,7 @@
         <div class="user-funcs-ctn">
             <ul class="functions-list">
                 <li class="function">
-                    <a routerLink="/property/add" class="function-title">Add new property</a>
+                    <a routerLink="/properties/add" class="function-title">Add new property</a>
                     <img src="../../../assets/icons/add-prop.png" alt="Add new property" class="function-icon">
                 </li>
     
@@ -24,13 +24,13 @@
                     <img src="../../../assets/icons/invite.png" alt="Invite to Apply" class="function-icon">
                 </li> -->
     
-                <li class="function blue">
-                    <a routerLink="/dashboard/forms"  class="function-title">Get Landlord Forms</a>
+                <li class="function">
+                    <a routerLink="/dashboard/add-lease"  class="function-title">Create new Lease</a>
                     <img src="../../../assets/icons/board-forms.png" alt="Get Landlord Forms" class="function-icon">
                 </li>
     
                 <li class="function">
-                    <a routerLink="/expenses/add"  class="function-title">Record an Expense</a>
+                    <a routerLink="/dashboard/add/expence"  class="function-title">Record an Expense</a>
                     <img src="../../../assets/icons/board-expenses.png" alt="Record an Expense" class="function-icon">
                 </li>
             </ul>
@@ -63,7 +63,7 @@
                         <img src="../../../assets/icons/metric-maintenance.png" alt="Maintenance" class="metric-icon">
                         <p class="metric-title">Open Maintenance</p>
                         <p class="metric-counter">(2)</p>
-                        <button class="metric-btn">Check all</button>
+                        <button class="metric-btn" routerLink="/properties/maintenance">Check all</button>
                     </li>
                 </ul>
             </div>

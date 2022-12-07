@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { HomeModule } from './home/home.module';
 import { UserModule } from './user/user.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { MatFormFieldModule, MatInputModule } from '@angular/material';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +29,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
     HomeModule,
     UserModule,
     DashboardModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent],

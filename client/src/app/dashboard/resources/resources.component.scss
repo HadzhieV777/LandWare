@@ -1,0 +1,123 @@
+$clr-black-font: #2A2A2A;
+$clr-blue-main: #03A4ED;
+$clr-blue-light: rgb(174, 188, 240);
+$clr-purp-detail: #E00043;
+$clr-white: #ffffff;
+
+
+#free-tools {
+    align-items: center;
+    text-align: center;
+
+    & .tools-container {
+        list-style: none;
+        padding: 0;
+
+        & .single-tool {
+            border: 1px solid $clr-blue-light;
+            background-color: $clr-white;
+            border-radius: .4rem;
+            margin: .5rem;
+            padding: .5rem;
+
+            & .tool-icon {
+                width: 5rem;
+            }
+
+            & .tool-btn {
+                position: relative;
+                z-index: 1;
+                margin-top: 40px;
+                height: 2.8rem;
+                border-radius: 1.5rem;
+                border: 1px solid $clr-blue-main;
+                background-color: transparent;
+                color: $clr-blue-main;
+                width: 40%;
+                transition: all .5s;
+                margin: 1rem;
+
+                &:hover {
+                    background-color: $clr-blue-light;
+                    color: $clr-white;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    #free-tools {
+        & .heading {
+            margin: 3rem;
+
+            & .title {
+                width: 60vw;
+                margin: 0 auto;
+            }
+
+        }
+
+        & .tools-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+
+
+            & .single-tool {
+                padding: 1rem;
+                align-items: center;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #free-tools {
+        margin-top: 2rem;
+        margin-left: 16rem;
+        & .heading {
+            & .title {
+                width: 45vw;
+            }
+
+        }
+
+        & .tools-container {
+            width: 66vw;
+            margin: 0 auto;
+
+            & .single-tool {
+                & .tool-paragraph {
+                    max-width: 25vw;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    #free-tools {
+        & .heading {
+            & .title {
+                width: 46%;
+            }
+
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    #free-tools {
+
+        & .heading {
+            & .title {
+                width: 32%;
+            }
+
+        }
+    }
+}

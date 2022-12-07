@@ -1,0 +1,43 @@
+<div class="container">
+    <h1>Record a Expense</h1>
+    
+        <div class="new-prop-border">
+            <div class="header-background"></div>
+            <form>
+                <input ngModel placeholder="Expense title" required type="text" name="title" id="title" />
+
+                <input ngModel placeholder="Expense cost" required type="price" name="price" id="price" />
+              <input
+                ngModel
+                required
+                type="text"
+                name="propAddress"
+                id="propAddress"
+                minlength="5"
+                placeholder="Address"
+              />
+
+              
+              <textarea ngModel  ng-attr-placeholder="" required type="text" name="description" rows="8" id="description" minlength="10" > 
+
+            </textarea>
+              <!-- <ng-container >
+                    <p class="error">
+                      Theme name is required.
+                    </p>
+                    <p class="error" >
+                      Theme name must be at least
+                       characters
+                      long.
+                    </p>
+                  </ng-container> -->
+
+          
+              <div class="new-prop-buttons">
+                <button class="cancel" type="button" routerLink="/dashboard/expenses">Cancel</button>
+                <button class="public">Add</button>
+              </div>
+            </form>
+          </div>
+          
+    </div>

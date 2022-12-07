@@ -1,0 +1,50 @@
+<div class="container">
+<h1>Add New Property</h1>
+
+    <div class="new-prop-border">
+        <div class="header-background"></div>
+        <form>
+          <!-- <label for="propAddress">Address <span class="red">*</span></label> -->
+          <input
+            ngModel
+            required
+            type="text"
+            name="propAddress"
+            id="propAddress"
+            minlength="5"
+            placeholder="Address"
+          />
+          <!-- <label for="city">City <span class="red">*</span></label> -->
+          <input ngModel  placeholder="City" required type="text" name="city" id="city" minlength="5" />
+          <!-- <ng-container >
+                <p class="error">
+                  Theme name is required.
+                </p>
+                <p class="error" >
+                  Theme name must be at least
+                   characters
+                  long.
+                </p>
+              </ng-container> -->
+      
+          <!-- <label for="zip">ZIP <span class="red">*</span></label> -->
+          <input ngModel placeholder="ZIP Code" required type="text" name="zip" id="zip" />
+      
+          <!-- <label for="bedrooms">Bedrooms<span class="red">*</span></label> -->
+          <input ngModel placeholder="Bedrooms count" required type="number" name="bedrooms" id="bedrooms" />
+          <!-- <label for="baths">Baths<span class="red">*</span></label> -->
+          <input ngModel placeholder="Baths count" required type="number" name="baths" id="baths" />
+          <!-- <label for="type">Type<span class="red">*</span></label> -->
+          <input ngModel placeholder="Property Type" required type="type" name="type" id="type" />
+      
+          <!-- <label for="price">Price<span class="red">*</span></label> -->
+          <input ngModel placeholder="Price per month" required type="price" name="price" id="price" />
+      
+          <div class="new-prop-buttons">
+            <button class="cancel" type="button" routerLink="/properties">Cancel</button>
+            <button class="public">Add</button>
+          </div>
+        </form>
+      </div>
+      
+</div>

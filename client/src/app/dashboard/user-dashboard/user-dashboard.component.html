@@ -1,5 +1,5 @@
 <aside id="dashboard">
-  <div class="logo-cnt" routerLink="/">
+  <div class="logo-cnt">
     <img
       class="logo-img"
       src="../../../assets/site-logo.png"
@@ -25,55 +25,13 @@
             alt="Properties"
             class="link-icon"
           />
-          <a routerLink="/properties/" class="link-title"
-            >Properties</a
-          >
-        </li>
-        <li class="link">
-          <img
-            src="../../../assets/icons/board-forms.png"
-            alt="Forms"
-            class="link-icon"
-          />
-          <a routerLink="/dashboard/forms" class="link-title">Forms</a>
-        </li>
-        <li class="link">
-          <img
-            src="../../../assets/icons/board-leases.png"
-            alt="Leases"
-            class="link-icon"
-          />
-          <a routerLink="/dashboard/leases" class="link-title">Leases</a>
+          <a routerLink="/properties/" class="link-title">Properties</a>
         </li>
       </ul>
     </div>
 
     <section class="single-section">
-      <h4 class="section-title">RENT</h4>
-      <div class="single-section">
-        <ul class="links">
-          <li class="link">
-            <img
-              src="../../../assets/icons/board-tenants.png"
-              alt="Tenants"
-              class="link-icon"
-            />
-            <a routerLink="/dashboard/tenants" class="link-title">Tenants</a>
-          </li>
-          <li class="link">
-            <img
-              src="../../../assets/icons/board-queries.png"
-              alt="Queries"
-              class="link-icon"
-            />
-            <a routerLink="/dashboard/queries" class="link-title">Queries</a>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="single-section">
-      <h4 class="section-title">FINANCES</h4>
+      <h4 class="section-title">TOOLS</h4>
       <div class="single-section">
         <ul class="links">
           <li class="link">
@@ -84,22 +42,21 @@
             />
             <a routerLink="/dashboard/expenses" class="link-title">Expenses</a>
           </li>
+
           <li class="link">
             <img
-              src="../../../assets/icons/board-stats.png"
-              alt="Statistics"
+              src="../../../assets/icons/board-leases.png"
+              alt="Leases"
               class="link-icon"
             />
-            <a routerLink="/dashboard/statistics" class="link-title"
-              >Statistics</a
-            >
+            <a routerLink="/dashboard/leases" class="link-title">Leases</a>
           </li>
         </ul>
       </div>
     </section>
 
     <section class="single-section">
-        <h4 class="section-title">EXTRA</h4>
+      <h4 class="section-title">EXTRA</h4>
       <div class="single-section">
         <ul class="links">
           <li class="link">
@@ -108,7 +65,7 @@
               alt="Account"
               class="link-icon"
             />
-            <a routerLink="/dashboard/profile" class="link-title">Account</a>
+            <a routerLink="/auth/profile" class="link-title">Account</a>
           </li>
           <li class="link">
             <img
@@ -119,14 +76,6 @@
             <a routerLink="/dashboard/resources" class="link-title"
               >Resources</a
             >
-          </li>
-          <li class="link">
-            <img
-              src="../../../assets/icons/board-help.png"
-              alt="Need Help?"
-              class="link-icon"
-            />
-            <a class="link-title" routerLink="/dashboard/help">Need Help?</a>
           </li>
         </ul>
       </div>

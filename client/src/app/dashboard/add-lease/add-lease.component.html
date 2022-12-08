@@ -1,0 +1,46 @@
+<div class="container">
+    <h1>Add new Lease</h1>
+    
+        <div class="new-prop-border">
+            <div class="header-background"></div>
+            <form>
+                <input ngModel placeholder="Lease title" required type="text" name="title" id="title" />
+                <input
+                ngModel
+                required
+                type="text"
+                name="propAddress"
+                id="propAddress"
+                minlength="5"
+                placeholder="Address"
+                />
+
+                <input ngModel placeholder="Rent" required type="number" name="price" id="price" />
+
+              
+              <input ngModel  placeholder="Lease description" required type="text" name="description" rows="8" id="description" minlength="10" /> 
+              <input ngModel  placeholder="Lease Term: 08/03/2022 - 08/08/2023" required type="text" name="description" rows="8" id="description" minlength="10" /> 
+             
+              <!--  Think how to manage file upload -->
+              <!-- <input ngModel  placeholder="Lease description" required type="file" name="description" rows="8" id="description" minlength="10" />  -->
+              
+              <!-- <ng-container >
+                    <p class="error">
+                      Theme name is required.
+                    </p>
+                    <p class="error" >
+                      Theme name must be at least
+                       characters
+                      long.
+                    </p>
+                  </ng-container> -->
+
+          
+              <div class="new-prop-buttons">
+                <button class="cancel" type="button" routerLink="/dashboard/leases">Cancel</button>
+                <button class="public">Add</button>
+              </div>
+            </form>
+          </div>
+          
+    </div>

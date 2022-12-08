@@ -1,7 +1,7 @@
 $clr-white: rgba(255, 255, 255, 0.3);
 $clr-primary: #03A4ED;
 $clr-secondary: #3F6FD7;
-$clr-detail: #E00043;
+$clr-detail: crimson;
 $clr-white-simple: #ffffff;
 
 
@@ -19,22 +19,26 @@ $drop-shadow: 10px 10px 60px -8px rgba(0, 0, 0, 0.2);
 .container {
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 56%;
+  top:60%;
   left: 50%;
 }
 
 form {
   background: $clr-white;
   padding: 3em;
-  height: 35rem;
+  height: 43rem;
+  width: 22rem;
   border-radius: 1.3rem;
   border-left: 1px solid $clr-white;
   border-top: 1px solid $clr-white;
   backdrop-filter: blur(10px);
   box-shadow: $form-box-shadow;
   text-align: center;
+  align-items: center;
   position: relative;
   transition: all 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
 
   p {
     font-weight: 600;
@@ -46,7 +50,7 @@ form {
     text-shadow: $text-shadow;
   }
 
-  span {
+  .secondary {
     color: rgba(0, 0, 0, 0.4);
     font-size: .8rem;
     font-weight: 600;
@@ -123,6 +127,14 @@ form {
   font-weight: 400;
   color: $clr-secondary;
   text-shadow: $placeholder-shadow;
+}
+
+.error {
+ color: red;
+ text-align: center;
+ margin: 0 auto;
+ margin-bottom: .5rem;
+ max-width: 20rem;
 }
 
 .drop {

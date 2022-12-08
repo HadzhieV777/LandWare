@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddExpenceComponent } from './add-expence/add-expence.component';
+import { AddLeaseComponent } from './add-lease/add-lease.component';
 import { ExpensesComponent } from './expenses/expenses.component';
 import { LeasesComponent } from './leases/leases.component';
 import { ResourcesComponent } from './resources/resources.component';
@@ -31,6 +32,10 @@ const routes: Routes = [
     {
       path: 'add/expence',
       component: AddExpenceComponent,
+    },
+    {
+      path: 'add/lease',
+      component: AddLeaseComponent,
     },
   ];
   

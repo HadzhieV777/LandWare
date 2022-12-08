@@ -14,7 +14,6 @@ import { FormsModule } from '@angular/forms';
 import { HomeModule } from './home/home.module';
 import { UserModule } from './user/user.module';
 import { DashboardModule } from './dashboard/dashboard.module';
-import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,7 +27,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     HomeModule,
     UserModule,
     DashboardModule,
-    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

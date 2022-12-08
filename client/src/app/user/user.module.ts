@@ -18,7 +18,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     UserRoutingModule,
     ReactiveFormsModule,
-    
   ]
 })
 export class UserModule { }

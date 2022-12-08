@@ -1,22 +1,127 @@
 <div class="form-cnt">
-    <div class="container">
-        <form >
-          <p>Sign up</p>
-          <input type="email" placeholder="Email"><br>
-          <input type="first_name" placeholder="First Name"><br>
-          <input type="last_name" placeholder="Last Name"><br>
-          <input type="password" placeholder="Password"><br>
-          <input type="password" placeholder="Repeat Password"><br>
-          <input type="button" value="Sign up"><br>
-          <span>Already have an account?<br><a routerLink="/auth/login">Sign in</a></span>
-        </form>
-      
-        <div class="drops">
-          <div class="drop drop-1"></div>
-          <div class="drop drop-2"></div>
-          <div class="drop drop-3"></div>
-          <div class="drop drop-4"></div>
-          <div class="drop drop-5"></div>
-        </div>
-      </div>
+  <div class="container">
+    <form [formGroup]="registerForm">
+      <p>Sign up</p>
+
+      <ng-container *ngIf="registerForm.get('email')?.touched">
+        <span
+          class="error"
+          *ngIf="registerForm.get('email')?.errors?.['required']"
+        >
+          Email is required!
+        </span>
+        <span
+          class="error"
+          *ngIf="registerForm.get('email')?.errors?.['email']"
+        >
+          Invalid email
+        </span>
+      </ng-container>
+
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="Email"
+        id="email"
+      /><br />
+
+      <ng-container *ngIf="registerForm.get('fName')?.touched">
+        <span
+          class="error"
+          *ngIf="registerForm.get('fName')?.errors?.['minlength']"
+        >
+          First name must have at least 2 characters!
+        </span>
+        <span
+          class="error"
+          *ngIf="registerForm.get('fName')?.errors?.['required']"
+        >
+          First name is required!
+        </span>
+      </ng-container>
+
+      <input
+        type="text"
+        formControlName="fName"
+        placeholder="First Name"
+      /><br />
+
+      <ng-container *ngIf="registerForm.get('lName')?.touched">
+        <span
+          class="error"
+          *ngIf="registerForm.get('lName')?.errors?.['minlength']"
+        >
+          Last name must have at least 2 characters!
+        </span>
+        <span
+          class="error"
+          *ngIf="registerForm.get('lName')?.errors?.['required']"
+        >
+          Last name is required!
+        </span>
+      </ng-container>
+      <input
+        type="text"
+        formControlName="lName"
+        placeholder="Last Name"
+      /><br />
+
+      <ng-container *ngIf="registerForm.get('password')?.touched">
+        <span
+          class="error"
+          *ngIf="registerForm.get('password')?.errors?.['required']"
+        >
+          Password is required!
+        </span>
+
+        <span
+          class="error"
+          *ngIf="registerForm.get('password')?.errors?.['invalidPassword']"
+        >
+          Password should have minimum 8 characters, at least 1 uppercase
+          letter, 1 lowercase letter and 1 number!
+        </span>
+      </ng-container>
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="Password"
+      /><br />
+
+      <ng-container *ngIf="registerForm.get('rePassword')?.touched">
+        <span
+          class="error"
+          *ngIf="registerForm.get('rePassword')?.errors?.['required']"
+        >
+          Passwords didn't match!
+        </span>
+        <span
+          class="error"
+          *ngIf="registerForm.get('rePassword')?.errors?.['passwordMismatch']"
+        >
+          Passwords didn't match!
+        </span>
+      </ng-container>
+      <input
+        type="password"
+        formControlName="rePassword"
+        placeholder="Repeat Password"
+      /><br />
+
+      <input type="button" value="Sign up" [disabled]="this.registerForm.invalid"/><br />
+      <span class="secondary"
+        >Already have an account?<br /><a routerLink="/auth/login"
+          >Sign in</a
+        ></span
+      >
+    </form>
+
+    <div class="drops">
+      <div class="drop drop-1"></div>
+      <div class="drop drop-2"></div>
+      <div class="drop drop-3"></div>
+      <div class="drop drop-4"></div>
+      <div class="drop drop-5"></div>
+    </div>
+  </div>
 </div>

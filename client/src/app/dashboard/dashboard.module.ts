@@ -7,9 +7,10 @@ import { LeasesComponent } from './leases/leases.component';
 import { ExpensesComponent } from './expenses/expenses.component';
 import { ResourcesComponent } from './resources/resources.component';
 import { AddExpenceComponent } from './add-expence/add-expence.component';
+import { AddLeaseComponent } from './add-lease/add-lease.component';
 
 @NgModule({
-  declarations: [UserPanelComponent, UserDashboardComponent, LeasesComponent, ExpensesComponent, ResourcesComponent, AddExpenceComponent],
+  declarations: [UserPanelComponent, UserDashboardComponent, LeasesComponent, ExpensesComponent, ResourcesComponent, AddExpenceComponent, AddLeaseComponent],
   imports: [CommonModule, DashboardRoutingModule],
   exports: [UserDashboardComponent],
 })

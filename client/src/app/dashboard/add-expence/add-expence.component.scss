@@ -8,7 +8,12 @@ $black: #000000;
 $gray: rgba($black, 0.6);
 $clr-white-dark: rgb(207, 205, 205);
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: #2A2A2A;
 }
 
@@ -73,7 +78,7 @@ button+button {
 .cancel {
     border-color: $clr-blue;
     color: $clr-blue;
-    
+
 
     &:hover {
         color: $clr-red;
@@ -81,10 +86,14 @@ button+button {
     }
 }
 
+.error {
+    color: $clr-red;
+}
+
 .public {
     border-color: $clr-blue;
     color: $clr-blue;
-    
+
 
     &:hover {
         color: $clr-green;

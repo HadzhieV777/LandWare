@@ -25,6 +25,10 @@ const routes: Routes = [
     loadChildren: () => import('./estate/estate.module').then((m) => m.EstateModule),
   },
   {
+    path: 'leases',
+    loadChildren: () => import('./leases/leases.module').then((m) => m.LeasesModule),
+  },
+  {
     path: '**',
     pathMatch: 'full',
     component: NotFoundComponent,

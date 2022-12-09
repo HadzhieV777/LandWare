@@ -4,4 +4,4 @@ Landware is a property management solution that automates your rental management
 
 ###### Application description can be found at client/app-description 
 
-
+### Stack:

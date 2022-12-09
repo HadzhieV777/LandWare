@@ -8,5 +8,9 @@ Landware is a property management solution that automates your rental management
 
 <p align="center">
 <h6 align="center"> Stack:</h6>
-<p align="center"> <img src="aio/src/assets/images/logos/angular/angular.png" alt="angular-logo" width="60px" height="60px"/> </p>
+<p align="center"> 
+  <img alt="SASS" width="40px" height="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" /> 
+   <img alt="TS" width="40px" height="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />  
+  <img alt="Angular" width="40px" height="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/angular-original.svg" />  
+</p>
   </p>

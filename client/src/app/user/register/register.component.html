@@ -108,7 +108,7 @@
         placeholder="Repeat Password"
       /><br />
 
-      <input type="button" value="Sign up" [disabled]="this.registerForm.invalid"/><br />
+      <input type="button" (click)="register()" value="Sign up" [disabled]="this.registerForm.invalid"/><br />
       <span class="secondary"
         >Already have an account?<br /><a routerLink="/auth/login"
           >Sign in</a

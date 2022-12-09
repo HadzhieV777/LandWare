@@ -114,7 +114,9 @@ button+button {
     }
 }
 
-
+.error {
+    color: $clr-red;
+}
 .new-prop-content {
     min-height: 100%;
     width: 100%;

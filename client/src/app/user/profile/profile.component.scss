@@ -1,8 +1,32 @@
 $clr-white: #ffffff;
-$clr-black: #000000;
 $clr-blue: #3F6FD7;
 $clr-red: crimson;
 $clr-green: limegreen;
+
+$black: #000000;
+$gray: rgba($black, 0.6);
+$clr-white-dark: rgb(207, 205, 205);
+
+input {
+    outline: none;
+    display: block;
+    background: rgba($black, 0.1);
+    width: 70%;
+    border: 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 12px 20px;
+    color: $gray;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    gap: .5rem;
+}
+
 
 .profile {
     $bg-color: hsla(0, 0%, 94.1%, .8);
@@ -16,7 +40,7 @@ $clr-green: limegreen;
     border-radius: .5rem;
     color: $border-clr;
     background-color: $bg-color;
-    box-shadow: 0 0 1em 0 $clr-black;
+    box-shadow: 0 0 1em 0 $black;
     text-align: center;
 
     & h3 {
@@ -114,18 +138,10 @@ $clr-green: limegreen;
     justify-content: center;
     margin: 1rem;
 }
-
-
-p.error {
-    text-align: center;
-    border-radius: 0.3em;
+.error {
     color: $clr-red;
-    padding-top: 0;
 }
 
-.input-error {
-    border-left-color: $clr-red;
-}
 
 @media screen and (min-width: 1024px) {
     .profile {

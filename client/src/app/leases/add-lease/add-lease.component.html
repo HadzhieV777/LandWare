@@ -1,1 +1,115 @@
-<p>add-lease works!</p>
+<div class="container">
+    <h1>Add new Lease</h1>
+  
+    <div class="new-prop-border">
+      <div class="header-background"></div>
+      <form [formGroup]="addLeaseForm">
+        <div class="dates-cnt">
+            <p class="title">Lease Term</p>
+          <div class="flex">
+            <input
+            type="date"
+            formControlName="dateFrom"
+            rows="8"
+            minlength="10"
+          />
+          <input
+            type="date"
+            formControlName="dateTo"
+            rows="8"
+            minlength="10"
+          />
+          </div>
+        </div>
+
+
+        <input
+          placeholder="Lease title"
+          type="text"
+          formControlName="leaseTitle"
+          id="leaseTitle"
+        />
+        <ng-container *ngIf="addLeaseForm.get('leaseTitle')?.touched">
+            <span
+              class="error"
+              *ngIf="addLeaseForm.get('leaseTitle')?.errors?.['minlength']"
+            >
+              Title must contain at least 5 characters!
+            </span>
+            <span
+              class="error"
+              *ngIf="addLeaseForm.get('leaseTitle')?.errors?.['required']"
+            >
+              Title is required!
+            </span>
+          </ng-container>
+        
+        <input
+          type="text"
+          formControlName="propAddress"
+          id="propAddress"
+          minlength="5"
+          placeholder="Address"
+        />
+        <ng-container *ngIf="addLeaseForm.get('propAddress')?.touched">
+            <span
+              class="error"
+              *ngIf="addLeaseForm.get('propAddress')?.errors?.['minlength']"
+            >
+              Property address must contain at least 10 characters!
+            </span>
+            <span
+              class="error"
+              *ngIf="addLeaseForm.get('propAddress')?.errors?.['required']"
+            >
+              Property address is required!
+            </span>
+          </ng-container>
+  
+        <input placeholder="Rent" type="number" formControlName="rent" id="rent" />
+        <ng-container *ngIf="addLeaseForm.get('rent')?.touched">
+            <span
+              class="error"
+              *ngIf="addLeaseForm.get('rent')?.errors?.['required']"
+            >
+            Property rent is required!
+            </span>
+          </ng-container>
+  
+        <input
+          placeholder="Lease description"
+          type="text"
+          formControlName="leaseDesc"
+          rows="8"
+          id="leaseDesc"
+          minlength="10"
+        />
+
+        <ng-container *ngIf="addLeaseForm.get('leaseDesc')?.touched">
+            <span
+              class="error"
+              *ngIf="addLeaseForm.get('leaseDesc')?.errors?.['minlength']"
+            >
+              Description must contain at least 10 characters!
+            </span>
+            <span
+              class="error"
+              *ngIf="addLeaseForm.get('leaseDesc')?.errors?.['required']"
+            >
+            Description is required!
+            </span>
+          </ng-container>
+   
+        <!--  Think how to manage file upload -->
+        <!-- <input   placeholder="Lease description"  type="file" name="description" rows="8" id="description" minlength="10" />  -->
+  
+        <div class="new-prop-buttons">
+          <button class="cancel" type="button" routerLink="/leases/">
+            Cancel
+          </button>
+          <button class="public" [disabled]="this.addLeaseForm.invalid">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

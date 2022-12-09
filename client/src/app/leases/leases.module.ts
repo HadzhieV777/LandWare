@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AddLeaseComponent } from './add-lease/add-lease.component';
 import { LeasesComponent } from './leases/leases.component';
+import { LeasesRoutingModule } from './leases-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -11,7 +13,9 @@ import { LeasesComponent } from './leases/leases.component';
     LeasesComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    LeasesRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class LeasesModule { }

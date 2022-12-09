@@ -26,95 +26,84 @@
         <p>0878444222</p>
       </div>
     </div>
-    <button class="edit-button">Edit</button>
+    <button class="edit-button" (click)="toggleEditMode()">Edit</button>
   </ng-container>
 
   <!-- USER FORM -->
-  <!-- <ng-container >
-        <form>
-          <div class="flex">
-            <p>First Name:</p>
-            <input
-              type="text"
-              name="firstName"
-              id="firstName"
-              required
-              minlength="5"
-              value="Johny"
-              formControlName="firstName"
-            />
-          </div>
-          <ng-container>
-            <p class="error">
-              First Name is required!
-            </p>
-            <p class="error">
-              First Name should contain at least 2 characters!
-            </p>
-          </ng-container>
-          <div class="flex">
-            <p>Last Name:</p>
-            <input
-              type="text"
-              name="lastName"
-              id="lastName"
-              required
-              minlength="5"
-              value="Johny"
-              formControlName="lastName"
-            />
-          </div>
+  <ng-container *ngIf="showEditMode">
+    <form [formGroup]="editProfileForm">
+      <input
+        type="text"
+        formControlName="fName"
+        placeholder="First Name"
+      />
+      <ng-container *ngIf="editProfileForm.get('fName')?.touched">
+        <span
+          class="error"
+          *ngIf="editProfileForm.get('fName')?.errors?.['minlength']"
+        >
+          First name must have at least 2 characters!
+        </span>
+        <span
+          class="error"
+          *ngIf="editProfileForm.get('fName')?.errors?.['required']"
+        >
+          First name is required!
+        </span>
+      </ng-container>
 
-          <div class="flex">
-            <p>Email:</p>
-            <input
-              type="email"
-              name="email"
-              formControlName="email"
-              id="email"
-              required
-            />
-          </div>
-          <ng-container>
-            <p class="error">
-              Email is required!
-            </p>
-            <p
-              class="error"
-            >
-              Email is not valid!
-            </p>
-          </ng-container>
-          <div class="flex">
-            <p>Phone:</p>
-            <div>
-              <select
-                name="select-tel"
-                id="select-tel"
-                class="tel"
-                formControlName="ext"
-              >
-                <option value="00359">+359</option>
-                <option value="00358">+358</option>
-              </select>
-              <input
-                type="text"
-                id="tel"
-                placeholder="885 888 888"
-              />
-            </div>
-          </div>
-          <div class="buttons-grup">
-            <button class="red-button"  type="button">
-              Cancel
-            </button>
-            <button
-              class="green-button"
-              type="submit"
-            >
-              Save
-            </button>
-          </div>
-        </form>
-      </ng-container> -->
+      <input
+        type="text"
+        formControlName="lName"
+        placeholder="Last Name"
+      />
+      <ng-container *ngIf="editProfileForm.get('lName')?.touched">
+        <span
+          class="error"
+          *ngIf="editProfileForm.get('lName')?.errors?.['minlength']"
+        >
+          Last name must have at least 2 characters!
+        </span>
+        <span
+          class="error"
+          *ngIf="editProfileForm.get('lName')?.errors?.['required']"
+        >
+          Last name is required!
+        </span>
+      </ng-container>
+
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="Email"
+        id="email"
+      />
+      <ng-container *ngIf="editProfileForm.get('email')?.touched">
+        <span
+          class="error"
+          *ngIf="editProfileForm.get('email')?.errors?.['required']"
+        >
+          Email is required!
+        </span>
+        <span
+          class="error"
+          *ngIf="editProfileForm.get('email')?.errors?.['email']"
+        >
+          Invalid email
+        </span>
+      </ng-container>
+
+      <input
+        type="number"
+        formControlName="phoneNumber"
+        placeholder="Phone Number"
+        id="email"
+      />
+
+      <div class="buttons-grup">
+        <button class="red-button" type="button"  (click)="toggleEditMode()">Cancel</button>
+        <button class="green-button" type="submit" [disabled]="this.editProfileForm.invalid">Save</button>
+      </div>
+    </form>
+  </ng-container>
 </div>

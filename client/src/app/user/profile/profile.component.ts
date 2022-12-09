@@ -1,15 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  styleUrls: ['./profile.component.scss'],
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent {
+  showEditMode = false;
+  formSubmitted = false;
 
-  constructor() { }
+  editProfileForm = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+    fName: ['', [Validators.required, Validators.minLength(2)]],
+    lName: ['', [Validators.required, Validators.minLength(2)]],
+    phoneNumber: ['', [Validators.required]],
+  });
+  constructor(private fb: FormBuilder) {}
 
-  ngOnInit(): void {
+  toggleEditMode(): void {
+    this.showEditMode = !this.showEditMode;
+    if (this.showEditMode) {
+      this.formSubmitted = false;
+      this.editProfileForm.reset();
+    }
   }
-
 }

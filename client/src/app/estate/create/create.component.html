@@ -1,50 +1,137 @@
 <div class="container">
-<h1>Add New Property</h1>
+  <h1>Add New Property</h1>
 
-    <div class="new-prop-border">
-        <div class="header-background"></div>
-        <form>
-          <!-- <label for="propAddress">Address <span class="red">*</span></label> -->
-          <input
-            ngModel
-            required
-            type="text"
-            name="propAddress"
-            id="propAddress"
-            minlength="5"
-            placeholder="Address"
-          />
-          <!-- <label for="city">City <span class="red">*</span></label> -->
-          <input ngModel  placeholder="City" required type="text" name="city" id="city" minlength="5" />
-          <!-- <ng-container >
-                <p class="error">
-                  Theme name is required.
-                </p>
-                <p class="error" >
-                  Theme name must be at least
-                   characters
-                  long.
-                </p>
-              </ng-container> -->
-      
-          <!-- <label for="zip">ZIP <span class="red">*</span></label> -->
-          <input ngModel placeholder="ZIP Code" required type="text" name="zip" id="zip" />
-      
-          <!-- <label for="bedrooms">Bedrooms<span class="red">*</span></label> -->
-          <input ngModel placeholder="Bedrooms count" required type="number" name="bedrooms" id="bedrooms" />
-          <!-- <label for="baths">Baths<span class="red">*</span></label> -->
-          <input ngModel placeholder="Baths count" required type="number" name="baths" id="baths" />
-          <!-- <label for="type">Type<span class="red">*</span></label> -->
-          <input ngModel placeholder="Property Type" required type="type" name="type" id="type" />
-      
-          <!-- <label for="price">Price<span class="red">*</span></label> -->
-          <input ngModel placeholder="Price per month" required type="price" name="price" id="price" />
-      
-          <div class="new-prop-buttons">
-            <button class="cancel" type="button" routerLink="/properties">Cancel</button>
-            <button class="public">Add</button>
-          </div>
-        </form>
+  <div class="new-prop-border">
+    <div class="header-background"></div>
+    <form [formGroup]="createPropForm">
+      <input
+        required
+        type="text"
+        formControlName="propAddress"
+        id="propAddress"
+        minlength="5"
+        placeholder="Address"
+      />
+      <ng-container *ngIf="createPropForm.get('propAddress')?.touched">
+        <span
+          class="error"
+          *ngIf="createPropForm.get('propAddress')?.errors?.['minlength']"
+        >
+          Address must contain at least 10 characters!
+        </span>
+        <span
+          class="error"
+          *ngIf="createPropForm.get('propAddress')?.errors?.['required']"
+        >
+          Address is required!
+        </span>
+      </ng-container>
+      <input
+        placeholder="City"
+        type="text"
+        formControlName="city"
+        id="city"
+        minlength="5"
+      />
+      <ng-container *ngIf="createPropForm.get('city')?.touched">
+        <span
+          class="error"
+          *ngIf="createPropForm.get('city')?.errors?.['minlength']"
+        >
+          City must contain at least 2 characters!
+        </span>
+        <span
+          class="error"
+          *ngIf="createPropForm.get('city')?.errors?.['required']"
+        >
+          City is required!
+        </span>
+      </ng-container>
+      <input
+        placeholder="ZIP Code"
+        type="text"
+        formControlName="zip"
+        id="zip"
+      />
+      <ng-container *ngIf="createPropForm.get('zip')?.touched">
+        <span
+          class="error"
+          *ngIf="createPropForm.get('zip')?.errors?.['required']"
+        >
+          ZIP code is required!
+        </span>
+      </ng-container>
+
+      <input
+        placeholder="Bedrooms count"
+        type="number"
+        formControlName="bedrooms"
+        id="bedrooms"
+      />
+
+      <ng-container *ngIf="createPropForm.get('bedrooms')?.touched">
+        <span
+          class="error"
+          *ngIf="createPropForm.get('bedrooms')?.errors?.['required']"
+        >
+          Bedrooms count is required!
+        </span>
+      </ng-container>
+
+      <input
+        placeholder="Baths count"
+        type="number"
+        formControlName="baths"
+        id="baths"
+      />
+      <ng-container *ngIf="createPropForm.get('baths')?.touched">
+        <span
+          class="error"
+          *ngIf="createPropForm.get('baths')?.errors?.['required']"
+        >
+          Baths count is required!
+        </span>
+      </ng-container>
+      <input
+        placeholder="Property Type"
+        type="text"
+        formControlName="type"
+        id="type"
+      />
+      <ng-container *ngIf="createPropForm.get('type')?.touched">
+        <span
+          class="error"
+          *ngIf="createPropForm.get('type')?.errors?.['minlength']"
+        >
+          Property type must contain at least 10 characters!
+        </span>
+        <span
+          class="error"
+          *ngIf="createPropForm.get('type')?.errors?.['required']"
+        >
+          Property type is required!
+        </span>
+      </ng-container>
+      <input
+        placeholder="Price per month"
+        type="number"
+        formControlName="price"
+        id="price"
+      />
+      <ng-container *ngIf="createPropForm.get('price')?.touched">
+        <span
+          class="error"
+          *ngIf="createPropForm.get('price')?.errors?.['required']"
+        >
+          Price is required!
+        </span>
+      </ng-container>
+      <div class="new-prop-buttons">
+        <button class="cancel" type="button" routerLink="/properties">
+          Cancel
+        </button>
+        <button class="public" [disabled]="this.createPropForm.invalid">Add</button>
       </div>
-      
+    </form>
+  </div>
 </div>

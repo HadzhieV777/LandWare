@@ -42,7 +42,7 @@ export class RegisterComponent {
 
     const { email, fName, lName, password } = this.registerForm.value;
 
-    this.authService.Register(email, password);
+    this.authService.Register(email, fName, lName, password);
     this.router.navigate(['/dashboard'])
   }
 }

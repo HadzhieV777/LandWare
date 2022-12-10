@@ -14,6 +14,7 @@ import { HomeModule } from './home/home.module';
 import { UserModule } from './user/user.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { LeasesModule } from './leases/leases.module';
+import { AuthService } from './user/auth.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,14 +22,16 @@ import { LeasesModule } from './leases/leases.module';
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule,
     AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
     HomeModule,
     UserModule,
     DashboardModule,
     LeasesModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

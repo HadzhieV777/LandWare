@@ -25,47 +25,6 @@
         id="email"
       /><br />
 
-      <ng-container *ngIf="registerForm.get('fName')?.touched">
-        <span
-          class="error"
-          *ngIf="registerForm.get('fName')?.errors?.['minlength']"
-        >
-          First name must have at least 2 characters!
-        </span>
-        <span
-          class="error"
-          *ngIf="registerForm.get('fName')?.errors?.['required']"
-        >
-          First name is required!
-        </span>
-      </ng-container>
-
-      <input
-        type="text"
-        formControlName="fName"
-        placeholder="First Name"
-      /><br />
-
-      <ng-container *ngIf="registerForm.get('lName')?.touched">
-        <span
-          class="error"
-          *ngIf="registerForm.get('lName')?.errors?.['minlength']"
-        >
-          Last name must have at least 2 characters!
-        </span>
-        <span
-          class="error"
-          *ngIf="registerForm.get('lName')?.errors?.['required']"
-        >
-          Last name is required!
-        </span>
-      </ng-container>
-      <input
-        type="text"
-        formControlName="lName"
-        placeholder="Last Name"
-      /><br />
-
       <ng-container *ngIf="registerForm.get('password')?.touched">
         <span
           class="error"
@@ -108,7 +67,22 @@
         placeholder="Repeat Password"
       /><br />
 
-      <input type="button" (click)="register()" value="Sign up" [disabled]="this.registerForm.invalid"/><br />
+      <input
+        type="button"
+        (click)="register()"
+        value="Sign up"
+        [disabled]="this.registerForm.invalid"
+      /><br />
+      <span class="social-login">
+        <span class="secondary">Or sing up using</span>
+        <a (click)="authService.GoogleAuth()" value="Sign in"
+          ><img
+            src="../../../assets/icons/google-icon.png"
+            alt="Google Logo"
+            class="social-btn"
+          /> </a
+        ><br />
+      </span>
       <span class="secondary"
         >Already have an account?<br /><a routerLink="/auth/login"
           >Sign in</a

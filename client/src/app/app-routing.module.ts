@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { LandingComponent } from './home/landing/landing.component';
 import { NotFoundComponent } from './home/pages/not-found/not-found.component';
 
+// guard
+import { AuthGuard } from './shared/guards/auth.guard';
+
 const routes: Routes = [
   {
     path: '',
@@ -19,14 +22,17 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'properties',
     loadChildren: () => import('./estate/estate.module').then((m) => m.EstateModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'leases',
     loadChildren: () => import('./leases/leases.module').then((m) => m.LeasesModule),
+    canActivate: [AuthGuard]
   },
   {
     path: '**',

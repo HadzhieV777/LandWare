@@ -13,20 +13,20 @@ $placeholder-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 $drop-shadow: 10px 10px 60px -8px rgba(0, 0, 0, 0.2);
 
 .form-cnt {
-  height: 78vh;
+  height: 62vh;
 }
 
 .container {
   position: absolute;
   transform: translate(-50%, -50%);
-  top:60%;
+  top:50%;
   left: 50%;
 }
 
 form {
   background: $clr-white;
   padding: 3em;
-  height: 43rem;
+  height: 38rem;
   width: 22rem;
   border-radius: 1.3rem;
   border-left: 1px solid $clr-white;
@@ -36,6 +36,7 @@ form {
   text-align: center;
   align-items: center;
   position: relative;
+  justify-content: center;
   transition: all 0.2s ease-in-out;
   display: flex;
   flex-direction: column;
@@ -135,6 +136,18 @@ form {
  margin: 0 auto;
  margin-bottom: .5rem;
  max-width: 20rem;
+}
+
+.social-login {
+  display: flex;
+  flex-direction: column;
+}
+.social-btn{
+  margin: 1rem;
+  width: 30%;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .drop {

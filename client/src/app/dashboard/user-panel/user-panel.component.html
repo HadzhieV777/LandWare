@@ -2,12 +2,21 @@
     <div class="banner-ctn">
         <img src="../../../assets/images/banner-img.png" alt="Banner" class="banner-img">
         <div class="banner-txt">
-            <p class="greeting">
-                Hello, John Doe
-            </p>
-            <p class="secondary">
-                Welcome to your dashboard.
-            </p>
+            <ng-container *ngIf="authService.user.displayName">
+                <p class="greeting" >
+                    Hello, {{authService.user.displayName}}
+                </p>
+                <p class="secondary">
+                    Welcome to your dashboard.
+                </p>
+            </ng-container>
+            <ng-container *ngIf="!authService.user.displayName">
+                <p class="greeting" >
+                    Welcome to your dashboard
+                </p>
+
+            </ng-container>
+           
         </div>
     </div>
 

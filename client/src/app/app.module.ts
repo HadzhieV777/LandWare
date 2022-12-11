@@ -14,7 +14,7 @@ import { HomeModule } from './home/home.module';
 import { UserModule } from './user/user.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { LeasesModule } from './leases/leases.module';
-import { AuthService } from './user/auth.service';
+import { AuthService } from './shared/services/auth-service.service';
 
 @NgModule({
   declarations: [AppComponent],

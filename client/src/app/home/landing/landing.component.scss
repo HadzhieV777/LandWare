@@ -372,3 +372,41 @@ $clr-white: #ffffff;
     }
 
 }
+
+@media screen and (min-width: 1920px) {
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .paragraph {
+        font-size: 1.6rem;
+    }
+
+    // HERO SECTION
+    #hero {
+
+        & .hero-banner {
+            height: 50vh;
+            width: 28vw
+        }
+
+    }
+
+    // BENEFITS SECTION
+    #benefits {
+        gap: 3rem;
+
+        & .benefits-img {
+            width: 25vw;
+            height: 40vh;
+        }
+
+        & .benefits-txt {
+
+            & .paragraph {
+                font-size: 1rem;
+            }
+        }
+    }
+}

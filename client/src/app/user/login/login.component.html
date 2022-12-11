@@ -37,6 +37,16 @@
         placeholder="Password"
       /><br />
       <input type="button" (click)="login()" value="Sign in" [disabled]="this.loginForm.invalid"/><br />
+      <span class="social-login">
+        <span class="secondary">Or sing in using</span>
+        <a (click)="authService.GoogleAuth()" value="Sign in"
+          ><img
+            src="../../../assets/icons/google-icon.png"
+            alt="Google Logo"
+            class="social-btn"
+          /> </a
+        ><br />
+      </span>
       <span class="secondary"
         >Don't have an account?<br /><a routerLink="/auth/register"
           >Sign up</a

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { AuthService } from 'src/app/shared/services/auth-service.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
     password: ['', [Validators.required]],
   });
   constructor(private fb: FormBuilder,
-    private authService: AuthService,
+    public authService: AuthService,
     private router: Router) {}
 
   login(): void {

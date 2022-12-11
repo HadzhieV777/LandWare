@@ -91,3 +91,7 @@ $clr-white: #ffffff;
     color: $clr-primary;
     padding: .7rem;
 }
+
+.link-title.manual:hover {
+    cursor: pointer;
+}

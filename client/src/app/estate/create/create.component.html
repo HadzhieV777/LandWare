@@ -7,21 +7,21 @@
       <input
         required
         type="text"
-        formControlName="propAddress"
-        id="propAddress"
+        formControlName="address"
+        id="address"
         minlength="5"
         placeholder="Address"
       />
-      <ng-container *ngIf="createPropForm.get('propAddress')?.touched">
+      <ng-container *ngIf="createPropForm.get('address')?.touched">
         <span
           class="error"
-          *ngIf="createPropForm.get('propAddress')?.errors?.['minlength']"
+          *ngIf="createPropForm.get('address')?.errors?.['minlength']"
         >
           Address must contain at least 10 characters!
         </span>
         <span
           class="error"
-          *ngIf="createPropForm.get('propAddress')?.errors?.['required']"
+          *ngIf="createPropForm.get('address')?.errors?.['required']"
         >
           Address is required!
         </span>
@@ -130,7 +130,7 @@
         <button class="cancel" type="button" routerLink="/properties">
           Cancel
         </button>
-        <button class="public" [disabled]="this.createPropForm.invalid">Add</button>
+        <button class="public" [disabled]="this.createPropForm.invalid" (click)="addEstate()">Add</button>
       </div>
     </form>
   </div>

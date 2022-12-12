@@ -3,27 +3,24 @@
   <!-- <p class="text">Scale your business easily. With our selected tools</p> -->
 </div>
 <div class="profile">
-  <img src="../../../assets/images/profile.png" alt="default user" />
+  <!-- <img src="../../../assets/images/profile.png" alt="default user" /> -->
+  <img
+    [src]="authService.user.photoURL"
+    alt="{{ authService.user.displayName }}"
+  />
   <h3>User Info</h3>
 
   <!-- USER INFO -->
   <ng-container>
     <div>
       <div class="flex">
-        <p>First Name:</p>
-        <p>Peter</p>
+        <p>Name:</p>
+        <p>{{ authService.user.displayName }}</p>
       </div>
-      <div class="flex">
-        <p>Last Name:</p>
-        <p>Petrov</p>
-      </div>
+      <div class="flex"></div>
       <div class="flex">
         <p>Email:</p>
-        <p>pesho@gmail.com</p>
-      </div>
-      <div class="flex">
-        <p>Phone:</p>
-        <p>0878444222</p>
+        <p>{{ authService.user.email }}</p>
       </div>
     </div>
     <button class="edit-button" (click)="toggleEditMode()">Edit</button>
@@ -34,48 +31,28 @@
     <form [formGroup]="editProfileForm">
       <input
         type="text"
-        formControlName="fName"
-        placeholder="First Name"
+        formControlName="displayName"
+        placeholder="{{ authService.user.displayName }}"
       />
-      <ng-container *ngIf="editProfileForm.get('fName')?.touched">
+      <ng-container *ngIf="editProfileForm.get('displayName')?.touched">
         <span
           class="error"
-          *ngIf="editProfileForm.get('fName')?.errors?.['minlength']"
+          *ngIf="editProfileForm.get('displayName')?.errors?.['minlength']"
         >
-          First name must have at least 2 characters!
+          Full name must have at least 2 characters!
         </span>
         <span
           class="error"
-          *ngIf="editProfileForm.get('fName')?.errors?.['required']"
+          *ngIf="editProfileForm.get('displayName')?.errors?.['required']"
         >
-          First name is required!
-        </span>
-      </ng-container>
-
-      <input
-        type="text"
-        formControlName="lName"
-        placeholder="Last Name"
-      />
-      <ng-container *ngIf="editProfileForm.get('lName')?.touched">
-        <span
-          class="error"
-          *ngIf="editProfileForm.get('lName')?.errors?.['minlength']"
-        >
-          Last name must have at least 2 characters!
-        </span>
-        <span
-          class="error"
-          *ngIf="editProfileForm.get('lName')?.errors?.['required']"
-        >
-          Last name is required!
+          Full name is required!
         </span>
       </ng-container>
 
       <input
         type="email"
         formControlName="email"
-        placeholder="Email"
+        placeholder="{{ authService.user.email }}"
         id="email"
       />
       <ng-container *ngIf="editProfileForm.get('email')?.touched">
@@ -95,14 +72,22 @@
 
       <input
         type="number"
-        formControlName="phoneNumber"
-        placeholder="Phone Number"
-        id="email"
+        formControlName="photoURL"
+        placeholder="{{ authService.user.photoURL }}"
+        id="photoURL"
       />
 
       <div class="buttons-grup">
-        <button class="red-button" type="button"  (click)="toggleEditMode()">Cancel</button>
-        <button class="green-button" type="submit" [disabled]="this.editProfileForm.invalid">Save</button>
+        <button class="red-button" type="button" (click)="toggleEditMode()">
+          Cancel
+        </button>
+        <button
+          class="green-button"
+          type="submit"
+          [disabled]="this.editProfileForm.invalid"
+        >
+          Save
+        </button>
       </div>
     </form>
   </ng-container>

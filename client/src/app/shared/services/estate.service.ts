@@ -23,7 +23,6 @@ export class EstateService {
 
   getByUser(userId: string): AngularFirestoreCollection<Estate> {
     return this.db.collection<Estate>('estates', ref => ref.where('owner', '==', userId));
-    //  ???????????????/
   }
 
   create(estate: Estate): any {

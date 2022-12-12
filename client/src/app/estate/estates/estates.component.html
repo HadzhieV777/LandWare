@@ -1,61 +1,40 @@
 <section id="add-prop" class="section">
   <header class="heading">
     <h1 class="title">Properties</h1>
-   </header>
+  </header>
 
-  <ul class="props-ctn">
-   
-    <li class="single-prop">
-        <img src="../../../assets/images/prop-img.png" alt="Property image" class="prop-img" />
-        <div class="prop-info">
-          <div class="aditional-data">
-            <h3 class="prop-address">Sofia Krasna Polyana 2</h3>
-            <p class="prop-zip">Sofia, 1330</p>
-            <div class="prop-extras-ctn">
-              <span class="prop-extra">Not Rented</span>
-              <span class="prop-extra">Rented</span>
-            </div>
-        </div>
-        <p class="price"><span class="currency">$</span>850</p>
-        </div>
-      </li>
-
+  <ng-container *ngIf="arrayEstate && arrayEstate.length > 0">
+    <ul class="props-ctn" *ngFor="let estate of arrayEstate">
       <li class="single-prop">
-        <img src="../../../assets/images/prop-img.png" alt="Property image" class="prop-img" />
+        <img
+          src="../../../assets/images/prop-img.png"
+          alt="Property image"
+          class="prop-img"
+        />
         <div class="prop-info">
           <div class="aditional-data">
-            <h3 class="prop-address">Sofia Krasna Polyana 2</h3>
-            <p class="prop-zip">Sofia, 1330</p>
+            <h3 class="prop-address">{{ estate.address }}</h3>
+            <p class="prop-zip">{{ estate.city }}, {{ estate.zip }}</p>
             <div class="prop-extras-ctn">
-              <span class="prop-extra">Not Rented</span>
-              <span class="prop-extra">Rented</span>
+              <span class="prop-extra" *ngIf="!estate.rented">Not Rented</span>
+              <span class="prop-extra" *ngIf="estate.rented">Rented</span>
+              <span class="prop-extra" *ngIf="estate.maintenance"
+                >Maintenance</span
+              >
             </div>
-        </div>
-        <p class="price"><span class="currency">$</span>850</p>
+          </div>
+          <p class="price"><span class="currency">$</span>{{ estate.price }}</p>
         </div>
       </li>
-
-      <li class="single-prop">
-        <img src="../../../assets/images/prop-img.png" alt="Property image" class="prop-img" />
-        <div class="prop-info">
-          <div class="aditional-data">
-            <h3 class="prop-address">Sofia Krasna Polyana 2</h3>
-            <p class="prop-zip">Sofia, 1330</p>
-            <div class="prop-extras-ctn">
-              <span class="prop-extra">Not Rented</span>
-              <span class="prop-extra">Rented</span>
-            </div>
-        </div>
-        <p class="price"><span class="currency">$</span>850</p>
-        </div>
-      </li>
-
-      <!-- <li class="no-props">
-        <h2>
-          You don't have any properties.
-        </h2>
+    </ul>
+  </ng-container>
+  <ng-container *ngIf="arrayEstate && arrayEstate.length === 0">
+    <ul class="props-ctn">
+      <li class="no-props">
+        <h2>You don't have any properties.</h2>
         <p>Add one and start exploring LandWare functionalities</p>
-      </li > -->
-  </ul>
-   <button id="add-btn" routerLink="/properties/add">Add New Property</button>
+      </li>
+    </ul>
+  </ng-container>
+  <button id="add-btn" routerLink="/properties/add">Add New Property</button>
 </section>

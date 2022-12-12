@@ -1,0 +1,97 @@
+<div class="container">
+  <h1>Record a Expense</h1>
+
+  <div class="new-prop-border">
+    <div class="header-background"></div>
+    <form [formGroup]="addExpenceForm">
+      <input
+        placeholder="Expense title"
+        type="text"
+        formControlName="expenceTitle"
+        id="expenceTitle"
+      />
+      <ng-container *ngIf="addExpenceForm.get('expenceTitle')?.touched">
+        <span
+          class="error"
+          *ngIf="addExpenceForm.get('expenceTitle')?.errors?.['minlength']"
+        >
+          Title must contain at least 5 characters!
+        </span>
+        <span
+          class="error"
+          *ngIf="addExpenceForm.get('expenceTitle')?.errors?.['required']"
+        >
+          Title is required!
+        </span>
+      </ng-container>
+
+      <input
+        placeholder="Expense cost"
+        type="number"
+        formControlName="expenceCost"
+        id="expenceCost"
+      />
+      <ng-container *ngIf="addExpenceForm.get('expenceCost')?.touched">
+        <span
+          class="error"
+          *ngIf="addExpenceForm.get('expenceCost')?.errors?.['required']"
+        >
+          Price is required!
+        </span>
+      </ng-container>
+
+      <input
+        type="text"
+        formControlName="propAddress"
+        id="propAddress"
+        minlength="5"
+        placeholder="Address"
+      />
+      <ng-container *ngIf="addExpenceForm.get('propAddress')?.touched">
+        <span
+          class="error"
+          *ngIf="addExpenceForm.get('propAddress')?.errors?.['minlength']"
+        >
+          Property address must contain at least 10 characters!
+        </span>
+        <span
+          class="error"
+          *ngIf="addExpenceForm.get('propAddress')?.errors?.['required']"
+        >
+          Property address is required!
+        </span>
+      </ng-container>
+
+      <input
+        placeholder="Expence description"
+        required
+        type="text"
+        formControlName="expenceDesc"
+        rows="8"
+        id="expenceDesc"
+      />
+      <ng-container *ngIf="addExpenceForm.get('expenceDesc')?.touched">
+        <span
+          class="error"
+          *ngIf="addExpenceForm.get('expenceDesc')?.errors?.['minlength']"
+        >
+          Description must contain at least 5 characters!
+        </span>
+        <span
+          class="error"
+          *ngIf="addExpenceForm.get('expenceDesc')?.errors?.['required']"
+        >
+          Description is required!
+        </span>
+      </ng-container>
+      <div class="new-prop-buttons">
+        <button class="cancel" type="button" routerLink="/dashboard/expenses">
+          Cancel
+        </button>
+        <button class="public" [disabled]="this.addExpenceForm.invalid">
+          Add
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

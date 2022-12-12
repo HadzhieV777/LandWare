@@ -48,10 +48,11 @@ form {
     }
 
     & img {
-        width: 7em;
-        height: 7em;
+        width: 9em;
+        height: 9em;
         margin: auto;
         display: block;
+        border-radius: 1rem;
     }
 
     .edit-button {

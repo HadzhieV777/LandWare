@@ -6,7 +6,7 @@ import {
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import * as auth from 'firebase/auth';
-import { IUser } from '../models/user.model';
+import { IUser } from '../interfaces/user';
 
 @Injectable({
   providedIn: 'root',
@@ -40,6 +40,7 @@ export class AuthService {
     const user = JSON.parse(localStorage.getItem('user')!);
     return user;
   }
+
 
   // Register with email/password
   Register(email: string, password: string) {
@@ -104,6 +105,8 @@ export class AuthService {
         window.alert(error);
       });
   }
+  
+  // Update user profile
 
   // Logout
   Logout() {

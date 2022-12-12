@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/shared/services/auth-service.service';
 
 @Component({
   selector: 'app-profile',
@@ -11,12 +12,13 @@ export class ProfileComponent {
   formSubmitted = false;
 
   editProfileForm = this.fb.group({
+    displayName: ['', [Validators.required, Validators.minLength(2)]],
     email: ['', [Validators.required, Validators.email]],
-    fName: ['', [Validators.required, Validators.minLength(2)]],
-    lName: ['', [Validators.required, Validators.minLength(2)]],
-    phoneNumber: ['', [Validators.required]],
+    imageURL: [''],
   });
-  constructor(private fb: FormBuilder) {}
+  constructor(public authService: AuthService,
+    private fb: FormBuilder) {}
+
 
   toggleEditMode(): void {
     this.showEditMode = !this.showEditMode;

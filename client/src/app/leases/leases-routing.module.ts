@@ -11,7 +11,7 @@ const routes: Routes = [
       component: LeasesComponent,
     },
     {
-      path: 'add/lease',
+      path: 'add',
       component: AddLeaseComponent,
     },
   ];

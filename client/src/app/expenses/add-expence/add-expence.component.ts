@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth-service.service';
 import { ExpencesService } from 'src/app/shared/services/expences.service';
+import {serverTimestamp, Timestamp } from 'firebase/firestore';
 
 @Component({
   selector: 'app-add-expence',
@@ -23,8 +24,10 @@ export class AddExpenceComponent {
       cost: ['', [Validators.required]],
       address: ['', [Validators.required, Validators.minLength(10)]],
       description: ['', [Validators.required, Validators.minLength(5)]],
+      date: [''].toString()
     });
   }
+  
 
   addExpense() {
     const expense = {

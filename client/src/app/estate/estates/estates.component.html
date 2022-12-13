@@ -13,7 +13,9 @@
         />
         <div class="prop-info">
           <div class="aditional-data">
+           <a routerLink="/properties/detail/{{estate.id}}">
             <h3 class="prop-address">{{ estate.address }}</h3>
+           </a>
             <p class="prop-zip">{{ estate.city }}, {{ estate.zip }}</p>
             <div class="prop-extras-ctn">
               <span class="prop-extra" *ngIf="!estate.rented">Not Rented</span>

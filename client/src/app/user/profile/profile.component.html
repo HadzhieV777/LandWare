@@ -3,8 +3,13 @@
   <!-- <p class="text">Scale your business easily. With our selected tools</p> -->
 </div>
 <div class="profile">
-  <!-- <img src="../../../assets/images/profile.png" alt="default user" /> -->
   <img
+    src="../../../assets/images/profile.png"
+    alt="default user"
+    *ngIf="!authService.user.photoURL"
+  />
+  <img
+    *ngIf="authService.user.photoURL"
     [src]="authService.user.photoURL"
     alt="{{ authService.user.displayName }}"
   />

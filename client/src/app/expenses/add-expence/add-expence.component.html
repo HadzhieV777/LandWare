@@ -7,19 +7,19 @@
       <input
         placeholder="Expense title"
         type="text"
-        formControlName="expenceTitle"
-        id="expenceTitle"
+        formControlName="title"
+        id="title"
       />
-      <ng-container *ngIf="addExpenceForm.get('expenceTitle')?.touched">
+      <ng-container *ngIf="addExpenceForm.get('title')?.touched">
         <span
           class="error"
-          *ngIf="addExpenceForm.get('expenceTitle')?.errors?.['minlength']"
+          *ngIf="addExpenceForm.get('title')?.errors?.['minlength']"
         >
           Title must contain at least 5 characters!
         </span>
         <span
           class="error"
-          *ngIf="addExpenceForm.get('expenceTitle')?.errors?.['required']"
+          *ngIf="addExpenceForm.get('title')?.errors?.['required']"
         >
           Title is required!
         </span>
@@ -28,35 +28,35 @@
       <input
         placeholder="Expense cost"
         type="number"
-        formControlName="expenceCost"
-        id="expenceCost"
+        formControlName="cost"
+        id="cost"
       />
-      <ng-container *ngIf="addExpenceForm.get('expenceCost')?.touched">
+      <ng-container *ngIf="addExpenceForm.get('cost')?.touched">
         <span
           class="error"
-          *ngIf="addExpenceForm.get('expenceCost')?.errors?.['required']"
+          *ngIf="addExpenceForm.get('cost')?.errors?.['required']"
         >
-          Price is required!
+          Expense cost is required!
         </span>
       </ng-container>
 
       <input
         type="text"
-        formControlName="propAddress"
-        id="propAddress"
+        formControlName="address"
+        id="address"
         minlength="5"
         placeholder="Address"
       />
-      <ng-container *ngIf="addExpenceForm.get('propAddress')?.touched">
+      <ng-container *ngIf="addExpenceForm.get('address')?.touched">
         <span
           class="error"
-          *ngIf="addExpenceForm.get('propAddress')?.errors?.['minlength']"
+          *ngIf="addExpenceForm.get('address')?.errors?.['minlength']"
         >
           Property address must contain at least 10 characters!
         </span>
         <span
           class="error"
-          *ngIf="addExpenceForm.get('propAddress')?.errors?.['required']"
+          *ngIf="addExpenceForm.get('address')?.errors?.['required']"
         >
           Property address is required!
         </span>
@@ -66,20 +66,20 @@
         placeholder="Expence description"
         required
         type="text"
-        formControlName="expenceDesc"
+        formControlName="description"
         rows="8"
-        id="expenceDesc"
+        id="description"
       />
-      <ng-container *ngIf="addExpenceForm.get('expenceDesc')?.touched">
+      <ng-container *ngIf="addExpenceForm.get('description')?.touched">
         <span
           class="error"
-          *ngIf="addExpenceForm.get('expenceDesc')?.errors?.['minlength']"
+          *ngIf="addExpenceForm.get('description')?.errors?.['minlength']"
         >
           Description must contain at least 5 characters!
         </span>
         <span
           class="error"
-          *ngIf="addExpenceForm.get('expenceDesc')?.errors?.['required']"
+          *ngIf="addExpenceForm.get('description')?.errors?.['required']"
         >
           Description is required!
         </span>
@@ -88,7 +88,7 @@
         <button class="cancel" type="button" routerLink="/expenses">
           Cancel
         </button>
-        <button class="public" [disabled]="this.addExpenceForm.invalid">
+        <button class="public" [disabled]="this.addExpenceForm.invalid" (click)="addExpense()">
           Add
         </button>
       </div>

@@ -5,9 +5,10 @@ import { DashboardRoutingModule } from './estate-routing.module';
 import { MaintenanceComponent } from './maintenance/maintenance.component';
 import { CreateComponent } from './create/create.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EstateDetailsComponent } from './estate-details/estate-details.component';
 
 @NgModule({
-  declarations: [EstatesComponent, MaintenanceComponent, CreateComponent],
+  declarations: [EstatesComponent, MaintenanceComponent, CreateComponent, EstateDetailsComponent],
   imports: [CommonModule, DashboardRoutingModule, ReactiveFormsModule],
 })
 export class EstateModule {}

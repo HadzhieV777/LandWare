@@ -5,4 +5,5 @@ export class Expence {
     cost!: number;
     address!: string;
     description!: string;
+    date!: Date;
 }

@@ -23,6 +23,12 @@ export class EstatesComponent implements OnInit {
     this.retrieveEstates();
   }
 
+  refreshList(): void {
+    this.currentEstate = undefined;
+    this.currentIndex = -1;
+    this.retrieveEstates();
+  }
+
   userId = this.authService.user.uid;
 
   retrieveEstates(): void {

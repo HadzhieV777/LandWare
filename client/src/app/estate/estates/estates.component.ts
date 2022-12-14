@@ -11,16 +11,19 @@ import { EstateService } from 'src/app/shared/services/estate.service';
 })
 export class EstatesComponent implements OnInit {
   arrayEstate?: Estate[];
+  currentEstate?: Estate;
+  currentIndex = -1;
 
   constructor(
     private estateService: EstateService,
-    private authService: AuthService) {}
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.retrieveEstates();
   }
 
-  userId = this.authService.user.uid
+  userId = this.authService.user.uid;
 
   retrieveEstates(): void {
     this.estateService
@@ -37,5 +40,10 @@ export class EstatesComponent implements OnInit {
       .subscribe((data) => {
         this.arrayEstate = data;
       });
+  }
+
+  setActiveEstate(estate: Estate, index: number): void {
+    this.currentEstate = estate;
+    this.currentIndex = index;
   }
 }

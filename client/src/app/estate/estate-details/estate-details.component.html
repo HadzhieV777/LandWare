@@ -1,121 +1,187 @@
-<div class="heading">
-  <h1 class="title">Details</h1>
-  <!-- <p class="text">Scale your business easily. With our selected tools</p> -->
-</div>
 <div class="profile">
-  <!-- <img src="../../../assets/images/profile.png" alt="default user" /> -->
-  <!-- <img
-      [src]="authService.user.photoURL"
-      alt="{{ authService.user.displayName }}"
-    /> -->
-  <h3>Estate Details</h3>
+  <h3>Property Details</h3>
 
-  <ng-container>
+  <ng-container *ngIf="!showEditMode">
     <div>
       <div class="flex">
         <p>Address:</p>
-        <p></p>
+        <p>{{currentEstate.address}}</p>
       </div>
       <div class="flex">
         <p>City:</p>
-        <p></p>
+        <p>{{currentEstate.city}}</p>
       </div>
       <div class="flex">
         <p>ZIP:</p>
-        <p></p>
+        <p>{{currentEstate.zip}}</p>
       </div>
       <div class="flex">
         <p>Bedrooms:</p>
-        <p></p>
+        <p>{{currentEstate.bedrooms}}</p>
       </div>
       <div class="flex">
         <p>Baths:</p>
-        <p></p>
+        <p>{{currentEstate.baths}}</p>
       </div>
       <div class="flex">
         <p>Type:</p>
-        <p></p>
+        <p>{{currentEstate.type}}</p>
       </div>
       <div class="flex">
         <p>Rent:</p>
-        <p></p>
+        <p>{{currentEstate.price}}</p>
       </div>
       <div class="flex">
         <p>Rented:</p>
-        <p></p>
+        <p>{{currentEstate.rented}}</p>
       </div>
       <div class="flex">
         <p>Maintenance:</p>
-        <p></p>
+        <p>{{currentEstate.maintenance}}</p>
       </div>
       
     </div>
-    <!-- <button class="edit-button" (click)="toggleEditMode()">Edit</button> -->
+    <button class="edit-button" (click)="toggleEditMode()">Edit</button>
   </ng-container>
 
-  <!-- USER FORM -->
-  <!-- <ng-container *ngIf="showEditMode">
-      <form [formGroup]="editProfileForm">
-        <input
-          type="text"
-          formControlName="displayName"
-          placeholder="{{ authService.user.displayName }}"
-        />
-        <ng-container *ngIf="editProfileForm.get('displayName')?.touched">
-          <span
-            class="error"
-            *ngIf="editProfileForm.get('displayName')?.errors?.['minlength']"
-          >
-            Full name must have at least 2 characters!
-          </span>
-          <span
-            class="error"
-            *ngIf="editProfileForm.get('displayName')?.errors?.['required']"
-          >
-            Full name is required!
-          </span>
-        </ng-container>
-  
-        <input
-          type="email"
-          formControlName="email"
-          placeholder="{{ authService.user.email }}"
-          id="email"
-        />
-        <ng-container *ngIf="editProfileForm.get('email')?.touched">
-          <span
-            class="error"
-            *ngIf="editProfileForm.get('email')?.errors?.['required']"
-          >
-            Email is required!
-          </span>
-          <span
-            class="error"
-            *ngIf="editProfileForm.get('email')?.errors?.['email']"
-          >
-            Invalid email
-          </span>
-        </ng-container>
-  
-        <input
-          type="number"
-          formControlName="photoURL"
-          placeholder="{{ authService.user.photoURL }}"
-          id="photoURL"
-        />
-  
-        <div class="buttons-grup">
-          <button class="red-button" type="button" (click)="toggleEditMode()">
-            Cancel
-          </button>
-          <button
-            class="green-button"
-            type="submit"
-            [disabled]="this.editProfileForm.invalid"
-          >
-            Save
-          </button>
-        </div>
-      </form>
-    </ng-container> -->
+  <!-- FORM -->
+  <ng-container *ngIf="showEditMode">
+    
+    <form>
+      <input
+        required
+        type="text"
+        name="address"
+        [(ngModel)]="currentEstate.address"
+        id="address"
+        minlength="5"
+      />
+      <!-- <ng-container *ngIf="createPropForm.get('address')?.touched">
+        <span
+          class="error"
+          *ngIf="createPropForm.get('address')?.errors?.['minlength']"
+        >
+          Address must contain at least 10 characters!
+        </span>
+        <span
+          class="error"
+          *ngIf="createPropForm.get('address')?.errors?.['required']"
+        >
+          Address is required!
+        </span>
+      </ng-container> -->
+      <input
+        type="text"
+        class="city"
+        id="city"
+        [(ngModel)]="currentEstate.city"
+        name="city"
+      />
+      <!-- <ng-container *ngIf="createPropForm.get('city')?.touched">
+        <span
+          class="error"
+          *ngIf="createPropForm.get('city')?.errors?.['minlength']"
+        >
+          City must contain at least 2 characters!
+        </span>
+        <span
+          class="error"
+          *ngIf="createPropForm.get('city')?.errors?.['required']"
+        >
+          City is required!
+        </span>
+      </ng-container> -->
+      <input
+        type="text"
+        class="zip"
+        name="zip"
+        [(ngModel)]="currentEstate.zip"
+        id="zip"
+      />
+      <!-- <ng-container *ngIf="createPropForm.get('zip')?.touched">
+        <span
+          class="error"
+          *ngIf="createPropForm.get('zip')?.errors?.['required']"
+        >
+          ZIP code is required!
+        </span>
+      </ng-container> -->
+
+      <input
+        type="number"
+        [(ngModel)]="currentEstate.bedrooms"
+        name="bedrooms"
+        class="bedrooms"
+        id="bedrooms"
+      />
+
+      <!-- <ng-container *ngIf="createPropForm.get('bedrooms')?.touched">
+        <span
+          class="error"
+          *ngIf="createPropForm.get('bedrooms')?.errors?.['required']"
+        >
+          Bedrooms count is required!
+        </span>
+      </ng-container> -->
+
+      <input
+        type="number"
+        [(ngModel)]="currentEstate.baths"
+        name="baths"
+        class="baths"
+        id="baths"
+      />
+      <!-- <ng-container *ngIf="createPropForm.get('baths')?.touched">
+        <span
+          class="error"
+          *ngIf="createPropForm.get('baths')?.errors?.['required']"
+        >
+          Baths count is required!
+        </span>
+      </ng-container> -->
+      <input
+      type="text"
+      [(ngModel)]="currentEstate.type"
+      name="type"
+      class="type"
+      id="type"
+      />
+      <!-- <ng-container *ngIf="createPropForm.get('type')?.touched">
+        <span
+          class="error"
+          *ngIf="createPropForm.get('type')?.errors?.['minlength']"
+        >
+          Property type must contain at least 10 characters!
+        </span>
+        <span
+          class="error"
+          *ngIf="createPropForm.get('type')?.errors?.['required']"
+        >
+          Property type is required!
+        </span>
+      </ng-container> -->
+      <input
+      type="number"
+      [(ngModel)]="currentEstate.price"
+      name="price"
+      class="price"
+      id="price"
+      />
+      <!-- <ng-container *ngIf="createPropForm.get('price')?.touched">
+        <span
+          class="error"
+          *ngIf="createPropForm.get('price')?.errors?.['required']"
+        >
+          Price is required!
+        </span>
+      </ng-container> -->
+      <div class="new-prop-buttons">
+        <button class="yellow-button" type="button" (click)="toggleEditMode()">
+          Cancel
+        </button>
+        <button class="red-button" (click)="deleteEstate()">Delete</button>
+        <button class="green-button" (click)="updateEstate()">Edit</button>
+      </div>
+    </form>
+    </ng-container> 
 </div>

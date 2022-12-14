@@ -21,6 +21,7 @@ export class EstateDetailsComponent implements OnInit {
   @Input() estate?: Estate;
   @Output() refreshList: EventEmitter<any> = new EventEmitter();
   @ViewChild(NgForm, { static: true }) form!: ElementRef<HTMLInputElement>;
+
   currentEstate: Estate = {
     address: '',
     city: '',
@@ -32,7 +33,7 @@ export class EstateDetailsComponent implements OnInit {
     rented: true,
     maintenance: false,
   };
-  message = '';
+
   showEditMode = false;
   formSubmitted = false;
 
@@ -41,7 +42,6 @@ export class EstateDetailsComponent implements OnInit {
   ngOnInit(): void {}
 
   ngOnChanges(): void {
-    this.message = '';
     this.currentEstate = { ...this.estate };
   }
 
@@ -55,7 +55,7 @@ export class EstateDetailsComponent implements OnInit {
     if (this.currentEstate.id) {
       this.estateService
         .update(this.currentEstate.id, data)
-        .then(() => this.unsetEstate())
+        .then(() => this.toggleEditMode())
         .catch((err) => console.log(err));
     }
   }
@@ -66,7 +66,6 @@ export class EstateDetailsComponent implements OnInit {
         .delete(this.currentEstate.id)
         .then(() => {
           this.unsetEstate();
-          this.message = 'The estate was deleted successfully!';
         })
         .catch((err) => console.log(err));
     }
@@ -76,11 +75,30 @@ export class EstateDetailsComponent implements OnInit {
     this.showEditMode = !this.showEditMode;
     if (this.showEditMode) {
       this.formSubmitted = false;
-      // this.editProfileForm.reset();
     }
   }
 
   unsetEstate(): void {
     this.refreshList.emit();
+  }
+
+  updateRent(status: boolean): void {
+    if (this.currentEstate.id) {
+      this.estateService.update(this.currentEstate.id, { rented: status })
+      .then(() => {
+        this.currentEstate.rented = status;
+      })
+      .catch(err => console.log(err));
+    }
+  }
+
+  updateMaintenance(status: boolean): void {
+    if (this.currentEstate.id) {
+      this.estateService.update(this.currentEstate.id, { maintenance: status })
+      .then(() => {
+        this.currentEstate.maintenance = status;
+      })
+      .catch(err => console.log(err));
+    }
   }
 }

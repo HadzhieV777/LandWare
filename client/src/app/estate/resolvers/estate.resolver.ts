@@ -16,10 +16,10 @@ export class EstateResolver implements Resolve<Estate | null> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
     const estateId = route.params['id'];
-    if (!estateId) {
-      this.router.navigate(['/estates']);
-      return null;
-    }
-    return this.estateService.getById(estateId);
+    // if (!estateId) {
+    //   this.router.navigate(['/estates']);
+    //   return null;
+    // }
+    // return this.estateService.getById(estateId);
   }
 }

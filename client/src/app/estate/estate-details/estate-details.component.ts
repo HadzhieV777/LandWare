@@ -49,13 +49,13 @@ export class EstateDetailsComponent implements OnInit {
     const data = {
       id: this.currentEstate.id,
       owner: this.currentEstate.owner,
-     ...form.value
+      ...form.value,
     };
 
     if (this.currentEstate.id) {
       this.estateService
         .update(this.currentEstate.id, data)
-        .then(() => (this.message = 'The estate was updated successfully!'))
+        .then(() => this.unsetEstate())
         .catch((err) => console.log(err));
     }
   }
@@ -65,7 +65,7 @@ export class EstateDetailsComponent implements OnInit {
       this.estateService
         .delete(this.currentEstate.id)
         .then(() => {
-          this.refreshList.emit();
+          this.unsetEstate();
           this.message = 'The estate was deleted successfully!';
         })
         .catch((err) => console.log(err));
@@ -78,5 +78,9 @@ export class EstateDetailsComponent implements OnInit {
       this.formSubmitted = false;
       // this.editProfileForm.reset();
     }
+  }
+
+  unsetEstate(): void {
+    this.refreshList.emit();
   }
 }

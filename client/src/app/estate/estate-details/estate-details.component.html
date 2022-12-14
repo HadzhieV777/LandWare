@@ -33,11 +33,25 @@
       </div>
       <div class="flex">
         <p>Rented:</p>
-        <p>{{ currentEstate.rented }}</p>
+        <p class="toggle">
+            <label class="switch">
+              <input type="checkbox" checked="{{currentEstate.rented}}" name="rent-switch" />
+              <div>
+                <span (click)="updateRent(!currentEstate.rented)"></span>
+              </div>
+            </label>
+          </p>
       </div>
       <div class="flex">
         <p>Maintenance:</p>
-        <p>{{ currentEstate.maintenance }}</p>
+        <p class="toggle">
+          <label class="switch">
+            <input type="checkbox" checked="{{currentEstate.maintenance}}" name="rent-switch" />
+            <div>
+              <span (click)="updateMaintenance(!currentEstate.maintenance)"></span>
+            </div>
+          </label>
+        </p>
       </div>
     </div>
     <button class="edit-button" (click)="unsetEstate()">Close</button>

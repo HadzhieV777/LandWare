@@ -2,6 +2,7 @@ $clr-white: #ffffff;
 $clr-blue: #3F6FD7;
 $clr-red: crimson;
 $clr-green: limegreen;
+$clr-yellow: #ffdf00;
 
 $black: #000000;
 $gray: rgba($black, 0.6);
@@ -18,6 +19,7 @@ input {
     padding: 12px 20px;
     color: $gray;
 }
+
 form {
     display: flex;
     flex-direction: column;
@@ -110,10 +112,14 @@ form {
     }
 }
 
-.red-button {
+.red-button,
+.green-button,
+.yellow-button {
     border-color: $clr-blue;
     color: $clr-blue;
-    
+}
+
+.red-button {
 
     &:hover {
         color: $clr-red;
@@ -122,13 +128,17 @@ form {
 }
 
 .green-button {
-    border-color: $clr-blue;
-    color: $clr-blue;
-    
-
     &:hover {
         color: $clr-green;
         border-color: $clr-green;
+    }
+}
+
+.yellow-button {
+    &:hover {
+        color: $clr-yellow;
+        border-color: $clr-yellow;
+
     }
 }
 
@@ -139,6 +149,7 @@ form {
     justify-content: center;
     margin: 1rem;
 }
+
 .error {
     color: $clr-red;
 }

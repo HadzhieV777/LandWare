@@ -5,7 +5,10 @@ import {
   OnChanges,
   Output,
   EventEmitter,
+  ViewChild,
+  ElementRef,
 } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Estate } from 'src/app/shared/models/estate.model';
 import { EstateService } from 'src/app/shared/services/estate.service';
 
@@ -17,6 +20,7 @@ import { EstateService } from 'src/app/shared/services/estate.service';
 export class EstateDetailsComponent implements OnInit {
   @Input() estate?: Estate;
   @Output() refreshList: EventEmitter<any> = new EventEmitter();
+  @ViewChild(NgForm, { static: true }) form!: ElementRef<HTMLInputElement>;
   currentEstate: Estate = {
     address: '',
     city: '',
@@ -41,19 +45,11 @@ export class EstateDetailsComponent implements OnInit {
     this.currentEstate = { ...this.estate };
   }
 
-  updateEstate(): void {
+  updateEstate(form: NgForm): void {
     const data = {
       id: this.currentEstate.id,
       owner: this.currentEstate.owner,
-      address: this.currentEstate.address,
-      city: this.currentEstate.city,
-      zip: this.currentEstate.zip,
-      bedrooms: this.currentEstate.bedrooms,
-      baths: this.currentEstate.baths,
-      type: this.currentEstate.type,
-      price: this.currentEstate.price,
-      rented: this.currentEstate.rented,
-      maintenance: this.currentEstate.maintenance,
+     ...form.value
     };
 
     if (this.currentEstate.id) {

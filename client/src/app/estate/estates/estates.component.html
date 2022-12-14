@@ -5,10 +5,12 @@
 
   <ng-container *ngIf="arrayEstate && arrayEstate.length > 0">
     <ul class="props-ctn">
-      <li class="single-prop" 
-      *ngFor="let estate of arrayEstate; let i = index"
-      [class.active]="i == currentIndex"
-      (click)="setActiveEstate(estate, i)">
+      <li
+        class="single-prop"
+        *ngFor="let estate of arrayEstate; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveEstate(estate, i)"
+      >
         <img
           src="../../../assets/images/prop-img.png"
           alt="Property image"
@@ -16,9 +18,8 @@
         />
         <div class="prop-info">
           <div class="aditional-data">
-           <a routerLink="/properties/detail/{{estate.id}}">
             <h3 class="prop-address">{{ estate.address }}</h3>
-           </a>
+
             <p class="prop-zip">{{ estate.city }}, {{ estate.zip }}</p>
             <div class="prop-extras-ctn">
               <span class="prop-extra" *ngIf="!estate.rented">Not Rented</span>
@@ -42,4 +43,10 @@
     </ul>
   </ng-container>
   <button id="add-btn" routerLink="/properties/add">Add New Property</button>
+  <div *ngIf="currentEstate">
+    <app-estate-details
+      (refreshList)="refreshList()"
+      [estate]="currentEstate"
+    ></app-estate-details>
+  </div>
 </section>

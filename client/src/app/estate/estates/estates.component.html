@@ -4,8 +4,11 @@
   </header>
 
   <ng-container *ngIf="arrayEstate && arrayEstate.length > 0">
-    <ul class="props-ctn" *ngFor="let estate of arrayEstate">
-      <li class="single-prop">
+    <ul class="props-ctn">
+      <li class="single-prop" 
+      *ngFor="let estate of arrayEstate; let i = index"
+      [class.active]="i == currentIndex"
+      (click)="setActiveEstate(estate, i)">
         <img
           src="../../../assets/images/prop-img.png"
           alt="Property image"

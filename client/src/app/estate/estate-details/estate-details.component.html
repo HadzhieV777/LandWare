@@ -5,50 +5,50 @@
     <div>
       <div class="flex">
         <p>Address:</p>
-        <p>{{currentEstate.address}}</p>
+        <p>{{ currentEstate.address }}</p>
       </div>
       <div class="flex">
         <p>City:</p>
-        <p>{{currentEstate.city}}</p>
+        <p>{{ currentEstate.city }}</p>
       </div>
       <div class="flex">
         <p>ZIP:</p>
-        <p>{{currentEstate.zip}}</p>
+        <p>{{ currentEstate.zip }}</p>
       </div>
       <div class="flex">
         <p>Bedrooms:</p>
-        <p>{{currentEstate.bedrooms}}</p>
+        <p>{{ currentEstate.bedrooms }}</p>
       </div>
       <div class="flex">
         <p>Baths:</p>
-        <p>{{currentEstate.baths}}</p>
+        <p>{{ currentEstate.baths }}</p>
       </div>
       <div class="flex">
         <p>Type:</p>
-        <p>{{currentEstate.type}}</p>
+        <p>{{ currentEstate.type }}</p>
       </div>
       <div class="flex">
         <p>Rent:</p>
-        <p>{{currentEstate.price}}</p>
+        <p>{{ currentEstate.price }}</p>
       </div>
       <div class="flex">
         <p>Rented:</p>
-        <p>{{currentEstate.rented}}</p>
+        <p>{{ currentEstate.rented }}</p>
       </div>
       <div class="flex">
         <p>Maintenance:</p>
-        <p>{{currentEstate.maintenance}}</p>
+        <p>{{ currentEstate.maintenance }}</p>
       </div>
-      
     </div>
     <button class="edit-button" (click)="toggleEditMode()">Edit</button>
   </ng-container>
 
   <!-- FORM -->
   <ng-container *ngIf="showEditMode">
-    
-    <form>
+    <form #form="ngForm" (ngSubmit)="updateEstate(form)">
       <input
+        #address="ngModel"
+        ngModel
         required
         type="text"
         name="address"
@@ -56,58 +56,53 @@
         id="address"
         minlength="5"
       />
-      <!-- <ng-container *ngIf="createPropForm.get('address')?.touched">
-        <span
-          class="error"
-          *ngIf="createPropForm.get('address')?.errors?.['minlength']"
-        >
+      <ng-container *ngIf="address.touched">
+        <span class="error" *ngIf="address.errors?.['minlength']">
           Address must contain at least 10 characters!
         </span>
-        <span
-          class="error"
-          *ngIf="createPropForm.get('address')?.errors?.['required']"
-        >
+        <span class="error" *ngIf="address.errors?.['required']">
           Address is required!
         </span>
-      </ng-container> -->
+      </ng-container>
       <input
+        #city="ngModel"
+        ngModel
+        required
         type="text"
         class="city"
         id="city"
         [(ngModel)]="currentEstate.city"
         name="city"
+        minlength="2"
       />
-      <!-- <ng-container *ngIf="createPropForm.get('city')?.touched">
-        <span
-          class="error"
-          *ngIf="createPropForm.get('city')?.errors?.['minlength']"
-        >
+      <ng-container *ngIf="city.touched">
+        <span class="error" *ngIf="city.errors?.['minlength']">
           City must contain at least 2 characters!
         </span>
-        <span
-          class="error"
-          *ngIf="createPropForm.get('city')?.errors?.['required']"
-        >
+        <span class="error" *ngIf="city.errors?.['required']">
           City is required!
         </span>
-      </ng-container> -->
+      </ng-container>
       <input
+        #zip="ngModel"
+        ngModel
+        required
         type="text"
         class="zip"
         name="zip"
         [(ngModel)]="currentEstate.zip"
         id="zip"
       />
-      <!-- <ng-container *ngIf="createPropForm.get('zip')?.touched">
-        <span
-          class="error"
-          *ngIf="createPropForm.get('zip')?.errors?.['required']"
-        >
+      <ng-container *ngIf="zip.touched">
+        <span class="error" *ngIf="zip.errors?.['required']">
           ZIP code is required!
         </span>
-      </ng-container> -->
+      </ng-container>
 
       <input
+        #bedrooms="ngModel"
+        ngModel
+        required
         type="number"
         [(ngModel)]="currentEstate.bedrooms"
         name="bedrooms"
@@ -115,73 +110,68 @@
         id="bedrooms"
       />
 
-      <!-- <ng-container *ngIf="createPropForm.get('bedrooms')?.touched">
-        <span
-          class="error"
-          *ngIf="createPropForm.get('bedrooms')?.errors?.['required']"
-        >
+      <ng-container *ngIf="bedrooms.touched">
+        <span class="error" *ngIf="bedrooms.errors?.['required']">
           Bedrooms count is required!
         </span>
-      </ng-container> -->
+      </ng-container>
 
       <input
+        #baths="ngModel"
+        ngModel
+        required
         type="number"
         [(ngModel)]="currentEstate.baths"
         name="baths"
         class="baths"
         id="baths"
       />
-      <!-- <ng-container *ngIf="createPropForm.get('baths')?.touched">
-        <span
-          class="error"
-          *ngIf="createPropForm.get('baths')?.errors?.['required']"
-        >
+      <ng-container *ngIf="baths.touched">
+        <span class="error" *ngIf="baths.errors?.['required']">
           Baths count is required!
         </span>
-      </ng-container> -->
+      </ng-container>
       <input
-      type="text"
-      [(ngModel)]="currentEstate.type"
-      name="type"
-      class="type"
-      id="type"
+        #type="ngModel"
+        ngModel
+        required
+        type="text"
+        [(ngModel)]="currentEstate.type"
+        name="type"
+        class="type"
+        id="type"
+        minlength="10"
       />
-      <!-- <ng-container *ngIf="createPropForm.get('type')?.touched">
-        <span
-          class="error"
-          *ngIf="createPropForm.get('type')?.errors?.['minlength']"
-        >
+      <ng-container *ngIf="type.touched">
+        <span class="error" *ngIf="type.errors?.['minlength']">
           Property type must contain at least 10 characters!
         </span>
-        <span
-          class="error"
-          *ngIf="createPropForm.get('type')?.errors?.['required']"
-        >
+        <span class="error" *ngIf="type.errors?.['required']">
           Property type is required!
         </span>
-      </ng-container> -->
+      </ng-container>
       <input
-      type="number"
-      [(ngModel)]="currentEstate.price"
-      name="price"
-      class="price"
-      id="price"
+        #price="ngModel"
+        ngModel
+        required
+        type="number"
+        [(ngModel)]="currentEstate.price"
+        name="price"
+        class="price"
+        id="price"
       />
-      <!-- <ng-container *ngIf="createPropForm.get('price')?.touched">
-        <span
-          class="error"
-          *ngIf="createPropForm.get('price')?.errors?.['required']"
-        >
+      <ng-container *ngIf="price.touched">
+        <span class="error" *ngIf="price.errors?.['required']">
           Price is required!
         </span>
-      </ng-container> -->
+      </ng-container>
       <div class="new-prop-buttons">
         <button class="yellow-button" type="button" (click)="toggleEditMode()">
           Cancel
         </button>
         <button class="red-button" (click)="deleteEstate()">Delete</button>
-        <button class="green-button" (click)="updateEstate()">Edit</button>
+        <button class="green-button" [disabled]="form.invalid">Edit</button>
       </div>
     </form>
-    </ng-container> 
+  </ng-container>
 </div>

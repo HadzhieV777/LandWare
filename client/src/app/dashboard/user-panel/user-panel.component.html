@@ -69,7 +69,7 @@
               class="metric-icon"
             />
             <p class="metric-title">Rented properties</p>
-            <p class="metric-counter">{{ arrayEstate?.length }}</p>
+            <p class="metric-counter">{{ rentedEstates }}</p>
           </li>
           <li class="metric-u">
             <img
@@ -101,7 +101,7 @@
               class="metric-icon"
             />
             <p class="metric-title">Open Maintenance</p>
-            <p class="metric-counter">(2)</p>
+            <p class="metric-counter">({{ maintenanceEstates }})</p>
             <button class="metric-btn" routerLink="/properties/maintenance">
               Check all
             </button>

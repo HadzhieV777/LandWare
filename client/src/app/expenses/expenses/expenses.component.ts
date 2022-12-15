@@ -39,4 +39,14 @@ export class ExpensesComponent implements OnInit {
         this.arrayExpenses = data;
       });
   }
+
+  deleteExpense(expenseId: string | undefined): void {
+    if (expenseId) {
+      this.expensesService.delete(expenseId).then(() => {
+        this.expensesService.getByUser(this.userId)
+      })
+      .catch(err => console.log(err))
+    }
+
+  }
 }

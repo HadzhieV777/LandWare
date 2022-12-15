@@ -18,21 +18,21 @@
   <!-- USER INFO -->
   <ng-container>
     <div>
-      <div class="flex">
+      <div class="flex" *ngIf="authService.user.displayName">
         <p>Name:</p>
         <p>{{ authService.user.displayName }}</p>
       </div>
       <div class="flex"></div>
-      <div class="flex">
+      <div class="flex" *ngIf="authService.user.email">
         <p>Email:</p>
         <p>{{ authService.user.email }}</p>
       </div>
     </div>
-    <button class="edit-button" (click)="toggleEditMode()">Edit</button>
+    <!-- <button class="edit-button" (click)="toggleEditMode()">Edit</button> -->
   </ng-container>
 
   <!-- USER FORM -->
-  <ng-container *ngIf="showEditMode">
+  <!-- <ng-container *ngIf="showEditMode">
     <form [formGroup]="editProfileForm">
       <input
         type="text"
@@ -95,5 +95,5 @@
         </button>
       </div>
     </form>
-  </ng-container>
+  </ng-container> -->
 </div>

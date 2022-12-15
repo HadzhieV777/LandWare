@@ -1,81 +1,113 @@
 <section id="user-pnl" class="section">
-    <div class="banner-ctn">
-        <img src="../../../assets/images/banner-img.png" alt="Banner" class="banner-img">
-        <div class="banner-txt">
-            <ng-container *ngIf="authService.user.displayName">
-                <p class="greeting" >
-                    Hello, {{authService.user.displayName}}
-                </p>
-                <p class="secondary">
-                    Welcome to your dashboard.
-                </p>
-            </ng-container>
-            <ng-container *ngIf="!authService.user.displayName">
-                <p class="greeting" >
-                    Welcome to your dashboard
-                </p>
-
-            </ng-container>
-           
-        </div>
+  <div class="banner-ctn">
+    <img
+      src="../../../assets/images/banner-img.png"
+      alt="Banner"
+      class="banner-img"
+    />
+    <div class="banner-txt">
+      <ng-container *ngIf="authService.user.displayName">
+        <p class="greeting">Hello, {{ authService.user.displayName }}</p>
+        <p class="secondary">Welcome to your dashboard.</p>
+      </ng-container>
+      <ng-container *ngIf="!authService.user.displayName">
+        <p class="greeting">Welcome to your dashboard</p>
+      </ng-container>
     </div>
+  </div>
 
-    <div class="secondary">
-        <div class="user-funcs-ctn">
-            <ul class="functions-list">
-                <li class="function">
-                    <a routerLink="/properties/add" class="function-title">Add new property</a>
-                    <img src="../../../assets/icons/add-prop.png" alt="Add new property" class="function-icon">
-                </li>
-    
-                <!-- <li class="function blue">
+  <div class="secondary">
+    <div class="user-funcs-ctn">
+      <ul class="functions-list">
+        <li class="function">
+          <a routerLink="/properties/add" class="function-title"
+            >Add new property</a
+          >
+          <img
+            src="../../../assets/icons/add-prop.png"
+            alt="Add new property"
+            class="function-icon"
+          />
+        </li>
+
+        <!-- <li class="function blue">
                     <a routerLink=""  class="function-title">Invite to Apply</a>
                     <img src="../../../assets/icons/invite.png" alt="Invite to Apply" class="function-icon">
                 </li> -->
-    
-                <li class="function">
-                    <a routerLink="/leases/add"  class="function-title">Create new Lease</a>
-                    <img src="../../../assets/icons/board-forms.png" alt="Get Landlord Forms" class="function-icon">
-                </li>
-    
-                <li class="function">
-                    <a routerLink="/expenses/add"  class="function-title">Record an Expense</a>
-                    <img src="../../../assets/icons/board-expenses.png" alt="Record an Expense" class="function-icon">
-                </li>
-            </ul>
-        </div>
-    
-        <div class="user-metrics-ctn">
-            <div class="metrics-upper">
-                <ul class="metrics-upper-list">
-                    <li class="metric-u">
-                        <img src="../../../assets/icons/metric-long.png" alt="Short term rents" class="metric-icon">
-                        <p class="metric-title">Rented properties</p>
-                        <p class="metric-counter">{{arrayEstate?.length}}</p>
-                    </li>
-                    <li class="metric-u">
-                        <img src="../../../assets/icons/board-stats.png" alt="Long term rents" class="metric-icon">
-                        <p class="metric-title">Monthly Income</p>
-                        <p class="metric-counter">{{reduceRents}}</p>
-                    </li>
-                    <li class="metric-u">
-                        <img src="../../../assets/icons/board-tenants.png" alt="Tenants" class="metric-icon">
-                        <p class="metric-title">Current Tenants</p>
-                        <p class="metric-counter">3</p>
-                    </li>
-                </ul>
-            </div>
-    
-            <div class="metrics-lower">
-                <ul class="metrics-lower-list">
-                    <li class="metric-l">
-                        <img src="../../../assets/icons/metric-maintenance.png" alt="Maintenance" class="metric-icon">
-                        <p class="metric-title">Open Maintenance</p>
-                        <p class="metric-counter">(2)</p>
-                        <button class="metric-btn" routerLink="/properties/maintenance">Check all</button>
-                    </li>
-                </ul>
-            </div>
-        </div>
+
+        <li class="function">
+          <a routerLink="/leases/add" class="function-title"
+            >Create new Lease</a
+          >
+          <img
+            src="../../../assets/icons/board-forms.png"
+            alt="Get Landlord Forms"
+            class="function-icon"
+          />
+        </li>
+
+        <li class="function">
+          <a routerLink="/expenses/add" class="function-title"
+            >Record an Expense</a
+          >
+          <img
+            src="../../../assets/icons/board-expenses.png"
+            alt="Record an Expense"
+            class="function-icon"
+          />
+        </li>
+      </ul>
     </div>
+
+    <div class="user-metrics-ctn">
+      <div class="metrics-upper">
+        <ul class="metrics-upper-list">
+          <li class="metric-u">
+            <img
+              src="../../../assets/icons/rent.png"
+              alt="Short term rents"
+              class="metric-icon"
+            />
+            <p class="metric-title">Rented properties</p>
+            <p class="metric-counter">{{ arrayEstate?.length }}</p>
+          </li>
+          <li class="metric-u">
+            <img
+              src="../../../assets/icons/income.png"
+              alt="Long term rents"
+              class="metric-icon"
+            />
+            <p class="metric-title">Monthly Income</p>
+            <p class="metric-counter green">{{ reduceRents | currency }}</p>
+          </li>
+          <li class="metric-u">
+            <img
+              src="../../../assets/icons/expense.png"
+              alt="Tenants"
+              class="metric-icon"
+            />
+            <p class="metric-title">Current Expenses</p>
+            <p class="metric-counter red">-{{ reduceExpenses | currency }}</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="metrics-lower">
+        <ul class="metrics-lower-list">
+          <li class="metric-l">
+            <img
+              src="../../../assets/icons/metric-maintenance.png"
+              alt="Maintenance"
+              class="metric-icon"
+            />
+            <p class="metric-title">Open Maintenance</p>
+            <p class="metric-counter">(2)</p>
+            <button class="metric-btn" routerLink="/properties/maintenance">
+              Check all
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>

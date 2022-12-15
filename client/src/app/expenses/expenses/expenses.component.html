@@ -25,7 +25,7 @@
             <p class="date">{{expense.date }}</p>
             <p class="prop-address">{{expense.address}}</p>
           </div>
-          <p class="price"><span class="currency">- $</span>{{expense.cost}}</p>
+          <p class="price"><span class="currency">- $</span>{{expense.cost | currency}}</p>
           <p class="expence-data">{{expense.description}}</p>
         </div>
       </li>

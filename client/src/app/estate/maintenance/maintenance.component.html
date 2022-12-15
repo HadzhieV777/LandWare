@@ -1,39 +1,51 @@
 <section id="add-lease" class="section">
-    <header class="heading">
-      <h1 class="title">Maintenance</h1>
-     </header>
-  
-     <div class="info-ctn">
-        <img src="../../../assets/images/workers.png" alt="Folder icon" class="info-icon">
-       <div class="info-txt">
-        <h3 class="info-title">
-            Track all property maintenances
-        </h3>
-        <p class="info-paragraph">
-          It's good to know when a property is out of business for a while.
-        </p>
-       </div>
+  <header class="heading">
+    <h1 class="title">Maintenance</h1>
+  </header>
 
-     </div>
-    <ul class="leases-ctn">
-        <li class="single-prop">
-            <img src="../../../assets/images/prop-img.png" alt="Property image" class="prop-img" />
-            <div class="prop-info">
-              <div class="aditional-data">
-                <h3 class="prop-address">Sofia Krasna Polyana 2</h3>
-                <div class="prop-extras-ctn">
-                    <p class="maintenance-type">Renovating the bathroom.</p>
-                </div>
+  <div class="info-ctn">
+    <img
+      src="../../../assets/images/workers.png"
+      alt="Folder icon"
+      class="info-icon"
+    />
+    <div class="info-txt">
+      <h3 class="info-title">Track all property maintenances</h3>
+      <p class="info-paragraph">
+        It's good to know when a property is out of business for a while.
+      </p>
+    </div>
+  </div>
+  <ng-container *ngIf="arrayFiltered && arrayFiltered.length > 0">
+    <ul class="leases-ctn" *ngFor="let estate of arrayFiltered">
+      <li class="single-prop">
+        <img
+          src="../../../assets/images/prop-img.png"
+          alt="Property image"
+          class="prop-img"
+        />
+        <div class="prop-info">
+          <div class="aditional-data">
+            <h3 class="prop-address">{{ estate.address }}</h3>
+            <div class="prop-extras-ctn">
+              <span class="prop-extra" *ngIf="!estate.rented">Not Rented</span>
+              <span class="prop-extra" *ngIf="estate.rented">Rented</span>
+              <span class="prop-extra false" *ngIf="estate.maintenance"
+                >Maintenance</span
+              >
             </div>
-            </div>
-          </li>
-  
-        <!-- <li class="no-leases">
-          <h2>
-            You don't have any leases
-          </h2>
-          <p>Add all your leases and keep them organized.</p>
-        </li > -->
+          </div>
+          <p class="price red">-{{ estate.price | currency }}</p>
+        </div>
+      </li>
     </ul>
-     <button id="add-btn">Start New Maintenance</button>
-  </section>
+  </ng-container>
+  <ng-container *ngIf="arrayFiltered && arrayFiltered.length == 0">
+    <ul class="leases-ctn">
+      <li class="no-leases">
+        <h2>No properties under maintenance</h2>
+        <p>All active maintenances will be displayed here.</p>
+      </li>
+    </ul>
+  </ng-container>
+</section>

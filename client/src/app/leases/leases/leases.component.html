@@ -27,7 +27,7 @@
             <p class="prop-address">{{ lease.address }}</p>
           </div>
           <p class="price">
-            <span class="currency">Rent: $</span>{{ lease.rent }}
+            <span class="currency">Rent: $</span>{{ lease.rent | currency }}
           </p>
           <p class="term">
             Lease Term: {{ lease.startDate }} - {{ lease.endDate }}

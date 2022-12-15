@@ -1,10 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreateComponent } from './create/create.component';
-import { EstateDetailsComponent } from './estate-details/estate-details.component';
 import { EstatesComponent } from './estates/estates.component';
 import { MaintenanceComponent } from './maintenance/maintenance.component';
-import { EstateResolver } from './resolvers/estate.resolver';
 
 const routes: Routes = [
     {
@@ -18,13 +16,6 @@ const routes: Routes = [
     {
       path: 'add',
       component: CreateComponent,
-    },
-    {
-      path: 'detail/:id',
-      resolve: {
-        estate: EstateResolver
-      },
-      component: EstateDetailsComponent
     },
   ];
   

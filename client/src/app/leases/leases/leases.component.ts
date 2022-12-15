@@ -39,4 +39,14 @@ export class LeasesComponent implements OnInit {
         this.arrayLeases = data;
       });
   }
+
+  deleteLease(leaseId: string | undefined): void {
+    if (leaseId) {
+      this.leaseService.delete(leaseId).then(() => {
+        this.leaseService.getByUser(this.userId)
+      })
+      .catch(err => console.log(err))
+    }
+
+  }
 }

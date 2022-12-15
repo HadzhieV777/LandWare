@@ -45,10 +45,9 @@ export class UserPanelComponent {
 
   get reduceRents() {
     if (this.arrayEstate) {
-      return this.arrayEstate.reduce(
-        (acc, val) => (acc += val.price ? val.price : 0),
-        0
-      );
+      return this.arrayEstate
+        .filter((e) => e.rented === true)
+        .reduce((acc, val) => (acc += val.price ? val.price : 0), 0);
     }
     return 0;
   }
@@ -76,6 +75,20 @@ export class UserPanelComponent {
         (acc, val) => (acc += val.cost ? val.cost : 0),
         0
       );
+    }
+    return 0;
+  }
+
+  get rentedEstates() {
+    if (this.arrayEstate) {
+      return this.arrayEstate.filter((e) => e.rented === true).length;
+    }
+    return 0;
+  }
+
+  get maintenanceEstates() {
+    if (this.arrayEstate) {
+      return this.arrayEstate.filter((e) => e.maintenance === true).length;
     }
     return 0;
   }

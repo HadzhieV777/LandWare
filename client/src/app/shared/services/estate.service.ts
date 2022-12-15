@@ -21,10 +21,6 @@ export class EstateService {
     return this.estatesRef;
   }
 
-  // getById(estateId: string): AngularFirestoreCollection<Estate> {
-  //   return this.db.collection<Estate>('estates', ref => ref.where('id', '==', estateId));
-  // }
-
   getByUser(userId: string): AngularFirestoreCollection<Estate> {
     return this.db.collection<Estate>('estates', ref => ref.where('owner', '==', userId));
   }

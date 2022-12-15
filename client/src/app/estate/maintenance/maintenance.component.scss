@@ -1,6 +1,7 @@
 $clr-white-dark: rgb(207, 205, 205);
 $clr-blue: #3F6FD7;
 $clr-white: #fff;
+$clr-red: crimson;
 
 * {
     margin: 0;
@@ -52,9 +53,6 @@ h6 {
     margin-bottom: 1rem;
     overflow: hidden;
 
-    &:hover {
-        cursor: pointer;
-    }
 
     & .prop-img {
         width: 100%;
@@ -134,6 +132,11 @@ h6 {
 .term {
     font-weight: 600;
 }
+
+.price.red {
+    color: $clr-red;
+}
+
 
 .no-leases {
     margin: 1rem;

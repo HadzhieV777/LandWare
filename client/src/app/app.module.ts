@@ -15,6 +15,7 @@ import { UserModule } from './user/user.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { LeasesModule } from './leases/leases.module';
 import { AuthService } from './shared/services/auth-service.service';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { AuthService } from './shared/services/auth-service.service';
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    SharedModule,
     HomeModule,
     UserModule,
     DashboardModule,

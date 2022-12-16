@@ -60,11 +60,6 @@ $clr-white: #ffffff;
     color: $clr-secondary;
 }
 
-.links {
-    list-style-type: none;
-    padding: 0;
-}
-
 .link {
     display: flex;
     align-items: center;
@@ -86,7 +81,6 @@ $clr-white: #ffffff;
 }
 
 .link-title {
-    text-decoration: none;
     font-size: 1.2rem;
     color: $clr-primary;
     padding: .7rem;

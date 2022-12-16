@@ -36,15 +36,12 @@ $clr-white: #ffffff;
     text-align: center;
 
     & .nav-el-cnt {
-        list-style: none;
-        padding: 0;
 
         & .nav-el {
             padding: .5rem;
             font-size: 1.1rem;
 
             & .nav-link {
-                text-decoration: none;
                 color: $clr-primary;
 
                 &:hover {

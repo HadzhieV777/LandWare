@@ -20,7 +20,7 @@
 
   <ng-container *ngIf="arrayLeases && arrayLeases.length > 0">
     <ul class="leases-ctn" *ngFor="let lease of arrayLeases">
-      <li class="single-lease" (click)="deleteLease(lease.id)">
+      <li @fade class="single-lease" (click)="deleteLease(lease.id)">
         <div class="prop-info">
           <div class="aditional-data">
             <h3 class="lease-name">{{ lease.title }}</h3>

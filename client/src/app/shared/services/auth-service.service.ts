@@ -54,7 +54,6 @@ export class AuthService {
       });
   }
 
-  // Login with email/password
   Login(email: string, password: string) {
     return this.afAuth
       .signInWithEmailAndPassword(email, password)
@@ -105,8 +104,7 @@ export class AuthService {
         window.alert(error);
       });
   }
-  
-  // Update user profile
+
 
   // Logout
   Logout() {

@@ -24,15 +24,6 @@ $clr-black-font: #2A2A2A;
     margin: .8rem;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-a {
-    text-decoration: none;
-}
-
 #user-pnl {
     display: flex;
     flex-direction: column;
@@ -96,14 +87,6 @@ a {
 
     & .metric-counter {
         font-weight: 800;
-
-        &.red {
-            color: $clr-red;
-        }
-
-        &.green {
-            color: $clr-green;
-        }
     }
 
 

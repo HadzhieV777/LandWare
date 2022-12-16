@@ -19,7 +19,7 @@
   <ng-container *ngIf="arrayExpenses && arrayExpenses.length > 0">
     <ul class="expense-ctn" *ngFor="let expense of arrayExpenses">
       <li class="single-expense" (click)="deleteExpense(expense.id)">
-        <div class="prop-info" @fade>
+        <div class="prop-info" @fadeIn @fadeOut>
           <div class="aditional-data">
             <h3 class="expense-name">{{expense.title}}</h3>
             <p class="date">{{expense.date }}</p>

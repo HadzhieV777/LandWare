@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs';
-import { fade } from 'src/app/shared/animations/animations';
+import { fadeIn, fadeOut } from 'src/app/shared/animations/fade-animations';
 import { Expence } from 'src/app/shared/models/expence.model';
 import { AuthService } from 'src/app/shared/services/auth-service.service';
 import { ExpencesService } from 'src/app/shared/services/expences.service';
@@ -9,7 +9,7 @@ import { ExpencesService } from 'src/app/shared/services/expences.service';
   selector: 'app-expenses',
   templateUrl: './expenses.component.html',
   styleUrls: ['./expenses.component.scss'],
-  animations: [fade],
+  animations: [fadeIn, fadeOut],
 })
 export class ExpensesComponent implements OnInit {
   arrayExpenses?: Expence[];

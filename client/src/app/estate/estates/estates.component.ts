@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs';
+
 import { Estate } from 'src/app/shared/models/estate.model';
 import { AuthService } from 'src/app/shared/services/auth-service.service';
 import { EstateService } from 'src/app/shared/services/estate.service';

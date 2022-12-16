@@ -2,8 +2,8 @@ import { animate, query, stagger, style, transition, trigger } from "@angular/an
 
 const enterTransition =  transition('* => *', [
     query('li', style({transform: 'translateX(-100%)'})),
-    query('li', stagger('500ms',[
-        animate('300ms', style({transform: ''}))
+    query('li', stagger('900ms',[
+        animate('200ms', style({transform: ''}))
     ])),
   ])     
 

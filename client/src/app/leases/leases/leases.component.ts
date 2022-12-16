@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs';
-import { fade } from 'src/app/shared/animations/animations';
+import { fadeIn, fadeOut } from 'src/app/shared/animations/fade-animations';
 import { Lease } from 'src/app/shared/models/lease.model';
 import { AuthService } from 'src/app/shared/services/auth-service.service';
 import { LeasesService } from 'src/app/shared/services/leases.service';
@@ -9,7 +9,7 @@ import { LeasesService } from 'src/app/shared/services/leases.service';
   selector: 'app-leases',
   templateUrl: './leases.component.html',
   styleUrls: ['./leases.component.scss'],
-  animations: [fade],
+  animations: [fadeIn, fadeOut],
 })
 export class LeasesComponent implements OnInit {
   arrayLeases?: Lease[];

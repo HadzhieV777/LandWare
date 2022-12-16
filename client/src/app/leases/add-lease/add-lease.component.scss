@@ -78,10 +78,6 @@ button+button {
     }
 }
 
-.error {
-    color: $clr-red;
-}
-
 .cancel {
     border-color: $clr-blue;
     color: $clr-blue;
@@ -162,7 +158,6 @@ button+button {
 p.error {
     text-align: left;
     border-radius: 0.3em;
-    color: $clr-red;
     padding-top: 0;
 }
 

@@ -17,7 +17,7 @@
     </div>
   </div>
   <ng-container *ngIf="arrayFiltered && arrayFiltered.length > 0">
-    <ul class="leases-ctn" *ngFor="let estate of arrayFiltered">
+    <ul class="leases-ctn" *ngFor="let estate of arrayFiltered" [@listAnimation]="arrayFiltered.length">
       <li class="single-prop">
         <img
           src="../../../assets/images/prop-img.png"

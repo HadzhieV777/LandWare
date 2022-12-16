@@ -6,9 +6,7 @@ $clr-white: #ffffff;
 // MAIN
 
 .title {
-    // padding: 2rem .2rem;
 
-    // font-family: 
     & .blue {
         color: $clr-blue-main;
     }
@@ -69,9 +67,8 @@ $clr-white: #ffffff;
     text-align: center;
 
     & .services-cnt {
-        list-style-type: none;
-        padding: 0;
-
+         
+ 
         & .service {
 
             & .service-ico {

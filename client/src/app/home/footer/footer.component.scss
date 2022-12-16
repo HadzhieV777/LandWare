@@ -63,7 +63,6 @@ $clr-blue-dark: #3F6FD7;
                 & .link-el {
 
                     & .link {
-                        text-decoration: none;
                         color: $clr-white;
 
                         &:hover {
@@ -74,8 +73,6 @@ $clr-blue-dark: #3F6FD7;
             }
 
             & .social-icons-cnt {
-                list-style-type: none;
-                padding: 0;
                 display: flex;
                 justify-content: space-around;
 

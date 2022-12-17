@@ -3,12 +3,13 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth-service.service';
 import { ExpencesService } from 'src/app/shared/services/expences.service';
-import {serverTimestamp, Timestamp } from 'firebase/firestore';
+import { fadeIn } from 'src/app/shared/animations/fade-animations';
 
 @Component({
   selector: 'app-add-expence',
   templateUrl: './add-expence.component.html',
   styleUrls: ['./add-expence.component.scss'],
+  animations: [fadeIn]
 })
 export class AddExpenceComponent {
   public addExpenceForm;

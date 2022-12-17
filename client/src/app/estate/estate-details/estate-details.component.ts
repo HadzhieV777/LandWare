@@ -9,6 +9,7 @@ import {
   ElementRef,
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { bounce } from 'src/app/shared/animations/fade-animations';
 import { Estate } from 'src/app/shared/models/estate.model';
 import { EstateService } from 'src/app/shared/services/estate.service';
 
@@ -16,6 +17,7 @@ import { EstateService } from 'src/app/shared/services/estate.service';
   selector: 'app-estate-details',
   templateUrl: './estate-details.component.html',
   styleUrls: ['./estate-details.component.scss'],
+  animations: [bounce],
 })
 export class EstateDetailsComponent implements OnInit {
   @Input() estate?: Estate;

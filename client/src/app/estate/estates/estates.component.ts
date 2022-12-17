@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs';
+import { pageAnimations } from 'src/app/shared/animations/single-el-animations';
 
 import { Estate } from 'src/app/shared/models/estate.model';
 import { AuthService } from 'src/app/shared/services/auth-service.service';
@@ -9,6 +10,7 @@ import { EstateService } from 'src/app/shared/services/estate.service';
   selector: 'app-estates',
   templateUrl: './estates.component.html',
   styleUrls: ['./estates.component.scss'],
+  animations: [pageAnimations]
 })
 export class EstatesComponent implements OnInit {
   arrayEstate?: Estate[];

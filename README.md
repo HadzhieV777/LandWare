@@ -7,7 +7,7 @@ Landware is a property management solution that automates your rental management
 <h6 align="center"> Application description can be found at app-description.odt </h6>
 
 
-<h3 align="center">You can check the app here: https://property-managment-api.firebaseapp.com/</h3>
+<h5 align="center">You can check the app here: https://property-managment-api.firebaseapp.com/</h5>
 
 <p align="center">
 <h6 align="center"> Stack:</h6>

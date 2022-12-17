@@ -4,7 +4,7 @@
   </header>
 
   <ng-container *ngIf="arrayEstate && arrayEstate.length > 0">
-    <ul class="props-ctn">
+    <ul class="props-ctn" @pageAnimations>
       <li
         class="single-prop"
         *ngFor="let estate of arrayEstate; let i = index"

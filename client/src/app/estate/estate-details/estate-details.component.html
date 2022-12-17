@@ -2,7 +2,7 @@
   <h3>Property Details</h3>
 
   <ng-container *ngIf="!showEditMode">
-    <div>
+    <div @bounce>
       <div class="flex">
         <p>Address:</p>
         <p>{{ currentEstate.address }}</p>

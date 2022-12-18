@@ -1,0 +1,17 @@
+// {
+//   "rules": {
+//     "items": {
+//       "$uid": {
+//         ".read": "$uid === auth.uid",
+//         ".write": "$uid === auth.uid"
+//       }
+//     }
+//   }
+// }
+
+{
+  "rules": {
+    ".read": true,
+    ".write": true,
+  }
+}

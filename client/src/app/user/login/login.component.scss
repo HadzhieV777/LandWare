@@ -19,7 +19,7 @@ $drop-shadow: 10px 10px 60px -8px rgba(0,0,0,0.2);
 .container {
   position: absolute;
   transform: translate(-50%,-50%);
-  top: 50%;
+  top: 55%;
   left: 50%;
 }
 
@@ -35,7 +35,7 @@ form {
   justify-content: center;
   text-align: center;
   position: relative;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.5s ease-in-out;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -182,8 +182,8 @@ form {
   }
   
   &-4 {
-    height: 7.5rem;
-    width: 7.5rem;
+    height: 6rem;
+    width: 6rem;
     top: -60px;
     right: -60px;
   }
@@ -203,4 +203,11 @@ select:focus,
 textarea:focus,
 button:focus {
     outline: none;
+}
+
+@media screen and (min-width: 720px) {
+  .container {
+    top: 44%;
+
+  }
 }

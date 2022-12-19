@@ -1,4 +1,4 @@
-import { animation, style, animate, keyframes } from '@angular/animations';
+import { animation, style, animate, keyframes, trigger } from '@angular/animations';
 
 export const DEFAULT_TIMING = '0.5';
 
@@ -44,3 +44,6 @@ export const bounceOut = animation(
   ),
   { params: { timing: DEFAULT_TIMING, delay: 0 } }
 );
+
+
+// Fix this animation

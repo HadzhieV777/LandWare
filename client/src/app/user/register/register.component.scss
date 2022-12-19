@@ -19,15 +19,15 @@ $drop-shadow: 10px 10px 60px -8px rgba(0, 0, 0, 0.2);
 .container {
   position: absolute;
   transform: translate(-50%, -50%);
-  top:50%;
+  top: 62%;
   left: 50%;
 }
 
 form {
   background: $clr-white;
   padding: 3em;
-  height: 38rem;
-  width: 22rem;
+  height: 40rem;
+  width: 18rem;
   border-radius: 1.3rem;
   border-left: 1px solid $clr-white;
   border-top: 1px solid $clr-white;
@@ -37,7 +37,7 @@ form {
   align-items: center;
   position: relative;
   justify-content: center;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.5s ease-in-out;
   display: flex;
   flex-direction: column;
 
@@ -130,20 +130,22 @@ form {
 }
 
 .error {
- color: red;
- text-align: center;
- margin: 0 auto;
- margin-bottom: .5rem;
- max-width: 20rem;
+  color: red;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: .5rem;
+  max-width: 20rem;
 }
 
 .social-login {
   display: flex;
   flex-direction: column;
 }
-.social-btn{
+
+.social-btn {
   margin: 1rem;
   width: 30%;
+
   &:hover {
     cursor: pointer;
   }
@@ -183,8 +185,8 @@ form {
   }
 
   &-4 {
-    height: 7.5rem;
-    width: 7.5rem;
+    height: 6rem;
+    width: 6rem;
     top: -60px;
     right: -60px;
   }
@@ -204,4 +206,26 @@ select:focus,
 textarea:focus,
 button:focus {
   outline: none;
+}
+
+@media screen and (min-width: 720px) {
+  .container {
+    top: 55%;
+  }
+
+  form {
+    height: 35rem;
+    width: 20rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    top: 47%;
+  }
+
+  form {
+    height: 35rem;
+    width: 20rem;
+  }
 }

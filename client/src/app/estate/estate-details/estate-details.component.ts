@@ -40,6 +40,9 @@ export class EstateDetailsComponent implements OnInit {
 
   constructor(private estateService: EstateService) {}
 
+  isRentChecked = this.currentEstate.rented;
+  isMaintenanceChecked = this.currentEstate.maintenance;
+
   ngOnInit(): void {}
 
   ngOnChanges(): void {
@@ -85,21 +88,25 @@ export class EstateDetailsComponent implements OnInit {
 
   updateRent(status: boolean): void {
     if (this.currentEstate.id) {
-      this.estateService.update(this.currentEstate.id, { rented: status })
-      .then(() => {
-        this.currentEstate.rented = status;
-      })
-      .catch(err => console.log(err));
+      this.estateService
+        .update(this.currentEstate.id, { rented: status })
+        .then(() => {
+          this.currentEstate.rented = status;
+          this.isRentChecked = this.currentEstate.rented;
+        })
+        .catch((err) => console.log(err));
     }
   }
 
   updateMaintenance(status: boolean): void {
     if (this.currentEstate.id) {
-      this.estateService.update(this.currentEstate.id, { maintenance: status })
-      .then(() => {
-        this.currentEstate.maintenance = status;
-      })
-      .catch(err => console.log(err));
+      this.estateService
+        .update(this.currentEstate.id, { maintenance: status })
+        .then(() => {
+          this.currentEstate.maintenance = status;
+          this.isMaintenanceChecked = this.currentEstate.maintenance;
+        })
+        .catch((err) => console.log(err));
     }
   }
 }

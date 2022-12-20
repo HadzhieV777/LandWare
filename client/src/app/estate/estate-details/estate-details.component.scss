@@ -79,7 +79,7 @@ form {
     }
 }
 
-.prop-extra{
+.prop-extra {
     border: 2px solid $clr-white;
     color: $clr-white;
     background-color: #3F6FD7;
@@ -88,7 +88,7 @@ form {
     // margin: .2rem;
 }
 
-.prop-extra.false{
+.prop-extra.false {
     background-color: crimson;
 
 }
@@ -177,7 +177,7 @@ form {
 
 // Toggle Switch Button
 .switch {
-    
+
     --dot: #062a99;
     --circle: #D3D4EC;
     --background: #fff;
@@ -186,6 +186,7 @@ form {
     --shadow: 0 1px 3px #{rgba(#00093D, .08)};
     cursor: pointer;
     position: relative;
+
     &:before {
         content: '';
         width: 60px;
@@ -197,10 +198,13 @@ form {
         top: 0;
         box-shadow: var(--shadow);
     }
+
     input {
         display: none;
-        & + div {
-            position: relative;
+
+        &+div {
+
+            // position: relative;
             &:before,
             &:after {
                 --s: 1;
@@ -213,21 +217,25 @@ form {
                 transform: scaleX(var(--s));
                 transition: transform var(--duration) ease;
             }
+
             &:before {
                 --s: 0;
                 left: 4px;
                 transform-origin: 0 50%;
                 border-radius: 2px 0 0 2px;
             }
+
             &:after {
                 left: 32px;
                 transform-origin: 100% 50%;
                 border-radius: 0 2px 2px 0;
             }
+
             span {
                 padding-left: 60px;
                 line-height: 28px;
                 color: var(--text);
+
                 &:before {
                     --x: 0;
                     --b: var(--circle);
@@ -239,24 +247,29 @@ form {
                     width: 24px;
                     height: 24px;
                     border-radius: 50%;
-                    box-shadow: inset 0 0 0 var(--s) var(--b); 
+                    box-shadow: inset 0 0 0 var(--s) var(--b);
                     transform: translateX(var(--x));
                     transition: box-shadow var(--duration) ease, transform var(--duration) ease;
                 }
+
                 &:not(:empty) {
                     padding-left: 68px;
                 }
             }
         }
+
         &:checked {
-            & + div {
+            &+div {
                 &:before {
                     --s: 1;
                 }
+
                 &:after {
                     --s: 0;
                 }
-                span {
+
+                .checkedRentInput,
+                .checkedMaintenanceInput {
                     &:before {
                         --x: 28px;
                         --s: 12px;
@@ -273,6 +286,5 @@ form {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    // gap: 10rem;
     width: 100%;
 }

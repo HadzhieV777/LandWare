@@ -48,6 +48,7 @@ export class AuthService {
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
         this.SetUserData(result.user);
+        
       })
       .catch((error) => {
         window.alert(error.message);

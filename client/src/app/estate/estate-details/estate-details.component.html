@@ -2,7 +2,7 @@
   <h3>Property Details</h3>
 
   <ng-container *ngIf="!showEditMode">
-    <div >
+    <div>
       <div class="flex">
         <p>Address:</p>
         <p>{{ currentEstate.address }}</p>
@@ -34,21 +34,37 @@
       <div class="flex">
         <p>Rented:</p>
         <p class="toggle">
-            <label class="switch">
-              <input type="checkbox" checked="{{currentEstate.rented}}" name="rent-switch" />
-              <div>
-                <span (click)="updateRent(!currentEstate.rented)"></span>
-              </div>
-            </label>
-          </p>
+          <label class="switch">
+            <input
+              type="checkbox"
+              [(ngModel)]="currentEstate.rented"
+              checked="{{ currentEstate.rented }}"
+              name="rent-switch"
+            />
+            <div>
+              <span
+                [class.checkedRentInput]="isRentChecked"
+                (click)="updateRent(!currentEstate.rented)"
+              ></span>
+            </div>
+          </label>
+        </p>
       </div>
       <div class="flex">
         <p>Maintenance:</p>
         <p class="toggle">
           <label class="switch">
-            <input type="checkbox" checked="{{currentEstate.maintenance}}" name="rent-switch" />
+            <input
+              type="checkbox"
+              [(ngModel)]="currentEstate.maintenance"
+              checked="{{ currentEstate.maintenance }}"
+              name="rent-switch"
+            />
             <div>
-              <span (click)="updateMaintenance(!currentEstate.maintenance)"></span>
+              <span
+                [class.checkedMaintenanceInput]="isMaintenanceChecked"
+                (click)="updateMaintenance(!currentEstate.maintenance)"
+              ></span>
             </div>
           </label>
         </p>

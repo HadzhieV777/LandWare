@@ -5,7 +5,7 @@ $clr-white: #ffffff;
 
 
 
-#dashboard {
+.dashboard {
     overflow: hidden;
     position: fixed;
     left: 0;
@@ -45,7 +45,7 @@ $clr-white: #ffffff;
     }
 
     &:hover {
-        cursor:default;
+        cursor: default;
     }
 }
 
@@ -88,4 +88,52 @@ $clr-white: #ffffff;
 
 .link-title.manual:hover {
     cursor: pointer;
+}
+
+
+.pointer {
+    width: 3rem;
+    position: absolute;
+    top: 29%;
+    right: 0%;
+    cursor: pointer;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.4);
+    background: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.8) 100%,
+            rgba(0, 0, 0, 0.4) 100%,
+            rgba(0, 0, 0, 0.4) 100%,
+            rgba(0, 0, 0, 0.8) 100%);
+}
+
+.customAside {
+    width: 3rem;
+}
+
+.customContent {
+    display: none;
+}
+
+.customPointer {
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
+
+.customPointerView{
+    display: none;
+}
+
+.customOverlay {
+    display: none;
 }

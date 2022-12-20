@@ -15,12 +15,21 @@ export class UserDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.responsive.observe('(min-width: 1024px)').subscribe((result) => {
-      this.hidePointer = false;
+      this.hidePointer = true;
 
       if (result.matches) {
         this.changeWidth = false;
         this.hidePointer = true;
         this.hideContent = false;
+        this.hideOverlay = true;
+      }
+    });
+    this.responsive.observe('(max-width: 1024px)').subscribe((result) => {
+      if (result.matches) {
+        this.changeWidth = false;
+        this.hidePointer = false;
+        this.hideContent = false;
+        this.hideOverlay = false;
       }
     });
   }
@@ -29,7 +38,7 @@ export class UserDashboardComponent implements OnInit {
   hidePointer: boolean = true;
   hideContent: boolean = false;
   turnPointer: boolean = true;
-  hideOverlay: boolean = false;
+  hideOverlay: boolean = true;
 
   openMenu() {
     this.changeWidth = !this.changeWidth;

@@ -6,12 +6,7 @@
   <img
     src="../../../assets/images/profile.png"
     alt="default user"
-    *ngIf="!authService.user.photoURL"
-  />
-  <img
     *ngIf="authService.user.photoURL"
-    [src]="authService.user.photoURL"
-    alt="{{ authService.user.displayName }}"
   />
   <h3>User Info</h3>
 

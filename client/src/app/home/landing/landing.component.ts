@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/auth-service.service';
 
 @Component({
   selector: 'app-landing',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing.component.scss'],
 })
 export class LandingComponent implements OnInit {
-
-  constructor() { }
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
+    if (this.authService.user) {
+      this.router.navigate(['/dashboard']);
+    }
   }
-
 }

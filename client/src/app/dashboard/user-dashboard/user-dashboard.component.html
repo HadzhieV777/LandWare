@@ -1,105 +1,108 @@
-<aside class="dashboard" [class.customAside]="changeWidth">
-  <div class="content-ctn" [class.customContent]="hideContent">
-    <div class="logo-cnt">
-      <img
-        class="logo-img"
-        src="../../../assets/site-logo.png"
-        alt="Landware logo"
-      />
-      <p class="logo-txt">Land<span class="blue">Ware</span></p>
-    </div>
-    <div class="sections-cnt">
-      <div class="single-section">
-        <ul class="links">
-          <li class="link">
-            <img
-              src="../../../assets/icons/board-home.png"
-              alt="Dashboard"
-              class="link-icon"
-            />
-            <a routerLink="/dashboard/" class="link-title">Dashboard</a>
-          </li>
-
-          <li class="link">
-            <img
-              src="../../../assets/icons/board-props.png"
-              alt="Properties"
-              class="link-icon"
-            />
-            <a routerLink="/properties/" class="link-title">Properties</a>
-          </li>
-        </ul>
+<div class="test-ctn">
+  <aside class="dashboard" [class.customAside]="changeWidth">
+    <div class="content-ctn" [class.customContent]="hideContent">
+      <div class="logo-cnt">
+        <img
+          class="logo-img"
+          src="../../../assets/site-logo.png"
+          alt="Landware logo"
+        />
+        <p class="logo-txt">Land<span class="blue">Ware</span></p>
       </div>
-
-      <section class="single-section">
-        <h4 class="section-title">TOOLS</h4>
+      <div class="sections-cnt">
         <div class="single-section">
           <ul class="links">
             <li class="link">
               <img
-                src="../../../assets/icons/board-expenses.png"
-                alt="Expenses"
+                src="../../../assets/icons/board-home.png"
+                alt="Dashboard"
                 class="link-icon"
               />
-              <a routerLink="/expenses" class="link-title">Expenses</a>
+              <a routerLink="/dashboard/" class="link-title">Dashboard</a>
             </li>
-
+  
             <li class="link">
               <img
-                src="../../../assets/icons/board-leases.png"
-                alt="Leases"
+                src="../../../assets/icons/board-props.png"
+                alt="Properties"
                 class="link-icon"
               />
-              <a routerLink="/leases/" class="link-title">Leases</a>
+              <a routerLink="/properties/" class="link-title">Properties</a>
             </li>
           </ul>
         </div>
-      </section>
-
-      <section class="single-section">
-        <h4 class="section-title">EXTRA</h4>
-        <div class="single-section">
-          <ul class="links">
-            <li class="link">
-              <img
-                src="../../../assets/icons/board-profile.png"
-                alt="Account"
-                class="link-icon"
-              />
-              <a routerLink="/auth/profile" class="link-title">Account</a>
-            </li>
-            <li class="link">
-              <img
-                src="../../../assets/icons/board-res.png"
-                alt="Resources"
-                class="link-icon"
-              />
-              <a routerLink="/dashboard/resources" class="link-title"
-                >Resources</a
-              >
-            </li>
-            <li class="link">
-              <img
-                src="../../../assets/icons/logout.png"
-                alt="Logout"
-                class="link-icon"
-              />
-              <a (click)="authService.Logout()" class="link-title manual"
-                >Logout</a
-              >
-            </li>
-          </ul>
-        </div>
-      </section>
+  
+        <section class="single-section">
+          <h4 class="section-title">TOOLS</h4>
+          <div class="single-section">
+            <ul class="links">
+              <li class="link">
+                <img
+                  src="../../../assets/icons/board-expenses.png"
+                  alt="Expenses"
+                  class="link-icon"
+                />
+                <a routerLink="/expenses" class="link-title">Expenses</a>
+              </li>
+  
+              <li class="link">
+                <img
+                  src="../../../assets/icons/board-leases.png"
+                  alt="Leases"
+                  class="link-icon"
+                />
+                <a routerLink="/leases/" class="link-title">Leases</a>
+              </li>
+            </ul>
+          </div>
+        </section>
+  
+        <section class="single-section">
+          <h4 class="section-title">EXTRA</h4>
+          <div class="single-section">
+            <ul class="links">
+              <li class="link">
+                <img
+                  src="../../../assets/icons/board-profile.png"
+                  alt="Account"
+                  class="link-icon"
+                />
+                <a routerLink="/auth/profile" class="link-title">Account</a>
+              </li>
+              <li class="link">
+                <img
+                  src="../../../assets/icons/board-res.png"
+                  alt="Resources"
+                  class="link-icon"
+                />
+                <a routerLink="/dashboard/resources" class="link-title"
+                  >Resources</a
+                >
+              </li>
+              <li class="link">
+                <img
+                  src="../../../assets/icons/logout.png"
+                  alt="Logout"
+                  class="link-icon"
+                />
+                <a (click)="authService.Logout()" class="link-title manual"
+                  >Logout</a
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
     </div>
-  </div>
-  <img
-    (click)="openMenu()"
-    src="../../../assets/icons/pointer.png"
-    alt=""
-    class="pointer"
-    [class.customPointer]="turnPointer"
-    [class.customPointerView]="hidePointer"
-  />
-</aside>
-<div class="overlay" [class.customOverlay]="hideOverlay"></div>
+    <img
+      (click)="openMenu()"
+      src="../../../assets/icons/pointer.png"
+      alt=""
+      class="pointer"
+      [class.customPointer]="turnPointer"
+      [class.customPointerView]="hidePointer"
+    />
+  </aside>
+  <div class="overlay" [class.customOverlay]="hideOverlay"></div>
+  
+</div>

@@ -31,11 +31,14 @@ $clr-white: #fff;
     border-radius: .5rem;
     align-items: center;
     text-align: left;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem;    
     overflow: hidden;
 
     &:hover {
         cursor: pointer;
+        background-color: $clr-white;
+        transition: 0.4s ease-in;
+        border-color: $clr-blue;
     }
 
     & .lease-info {

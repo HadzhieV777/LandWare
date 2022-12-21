@@ -34,8 +34,12 @@ $clr-white: #fff;
     margin-bottom: 1rem;
     overflow: hidden;
 
+
     &:hover {
         cursor: pointer;
+        background-color: $clr-white;
+        transition: 0.4s ease-in;
+        border-color: $clr-blue;
     }
 
     & .lease-info {

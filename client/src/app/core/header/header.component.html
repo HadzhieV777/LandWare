@@ -1,0 +1,37 @@
+<header class="header-cnt">
+ <div class="divider">
+  <div class="logo-cnt" routerLink="/">
+    <img
+      class="logo-img"
+      src="../../../assets/site-logo.png"
+      alt="Landware logo"
+    />
+    <p class="logo-txt">Land<span class="blue">Ware</span></p>
+  </div>
+  <div class="menu_icon" [class.menu_icon_custom]="menuIconVar" (click)="openMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+ </div>
+  <nav class="nav-left" [class.navClass]="navIsVisible">
+   
+    
+    <ul class="nav-el-cnt">
+      <li class="nav-el">
+        <a routerLink="/main/pricing" class="nav-link">Pricing</a>
+      </li>
+      <li class="nav-el">
+        <a routerLink="/dashboard/" class="nav-link">Dashboard</a>
+      </li>
+      <li class="nav-el">
+        <a routerLink="/main/resources" class="nav-link">Resources</a>
+      </li>
+      <li class="nav-el">
+        <button class="register-btn" routerLink="/auth/register">
+          Sign up
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>

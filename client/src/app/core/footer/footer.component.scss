@@ -1,0 +1,150 @@
+$clr-white: #ffffff;
+$clr-blue: #4b8ef1;
+$clr-blue-dark: #3F6FD7;
+
+.footer-cnt {
+    background-image: url("../../../assets/images/footer-bg.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 8.2rem;
+    padding-top: 19rem;
+    padding-bottom: 3.7rem;
+    text-align: center;
+
+    // NW SECTION
+    & #newsletter {
+
+        & .title {
+            color: $clr-white;
+        }
+
+        & .email {
+            font-size: .9rem;
+            color: $clr-white;
+            outline: none;
+            height: 2.8rem;
+            border: none;
+            background-color: transparent;
+            border-bottom: 1px solid $clr-white;
+            width: 80%;
+        }
+
+        & .nw-btn {
+            height: 2.8rem;
+            border-radius: 1.5rem;
+            border: 1px solid $clr-white;
+            background-color: transparent;
+            color: $clr-white;
+            width: 80%;
+            transition: all .5s;
+            margin: 1rem;
+
+            &:hover {
+                background-color: $clr-white;
+                color: $clr-blue;
+            }
+        }
+    }
+
+    & #links {
+        margin: 4rem;
+
+        & .cnt {
+
+            & .links-title {
+                color: $clr-white;
+            }
+
+            & .links-list {
+                list-style-type: none;
+                padding: 0;
+
+                & .link-el {
+
+                    & .link {
+                        color: $clr-white;
+
+                        &:hover {
+                            color: $clr-blue-dark;
+                        }
+                    }
+                }
+            }
+
+            & .social-icons-cnt {
+                display: flex;
+                justify-content: space-around;
+
+                & .icon-cnt {
+
+                    & .icon {
+
+                        & img {
+                            color: $clr-white;
+                            width: 2rem;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    & .email {
+        color: $clr-white;
+
+        & a {
+            color: $clr-blue-dark;
+            text-decoration: none;
+        }
+    }
+
+}
+
+// copyright
+#copyright {
+    color: $clr-white;
+
+    & .copyright-txt {
+
+        & a {
+            color: $clr-blue-dark;
+            text-decoration: none;
+        }
+    }
+}
+
+
+
+@media screen and (min-width: 768px) {
+    #newsletter {
+
+        & .input-ctn {
+            display: flex;
+            flex-direction: row;
+            width: 60%;
+            margin: 0 auto;
+        }
+    }
+
+    #links {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        justify-content: space-around;
+
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #newsletter {
+
+        & .input-ctn {
+           
+            width: 40%;
+
+        }
+    }
+}
+

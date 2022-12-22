@@ -4,12 +4,13 @@ import { Router } from '@angular/router';
 import { EstateService } from 'src/app/shared/services/estate.service';
 import { AuthService } from 'src/app/shared/services/auth-service.service';
 import { fadeIn } from 'src/app/shared/animations/fade-animations';
+import { bounceIn } from 'src/app/shared/animations/bounce';
 
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.scss'],
-animations: [fadeIn]
+animations: [bounceIn]
 })
 export class CreateComponent implements OnInit {
   public createPropForm;

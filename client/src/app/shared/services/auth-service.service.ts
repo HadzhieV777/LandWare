@@ -88,9 +88,7 @@ export class AuthService {
   }
 
   GoogleAuth() {
-    return this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
-      this.router.navigate(['/dashboard']);
-    });
+    return this.AuthLogin(new auth.GoogleAuthProvider())
   }
 
   AuthLogin(provider: any) {

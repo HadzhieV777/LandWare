@@ -16,7 +16,7 @@ $drop-shadow: 10px 10px 60px -8px rgba(0, 0, 0, 0.2);
   height: 62vh;
 }
 
-.container {
+.user-form-container {
   position: absolute;
   transform: translate(-50%, -50%);
   top: 62%;
@@ -209,7 +209,7 @@ button:focus {
 }
 
 @media screen and (min-width: 720px) {
-  .container {
+  .user-form-container {
     top: 55%;
   }
 
@@ -220,12 +220,12 @@ button:focus {
 }
 
 @media screen and (min-width: 1024px) {
-  .container {
+  .user-form-container {
     top: 47%;
   }
 
   form {
     height: 35rem;
-    width: 20rem;
+    width: 15rem;
   }
 }

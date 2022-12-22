@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { bounceIn } from 'src/app/shared/animations/bounce';
 import { AuthService } from 'src/app/shared/services/auth-service.service';
 import { LeasesService } from 'src/app/shared/services/leases.service';
 
@@ -8,6 +9,7 @@ import { LeasesService } from 'src/app/shared/services/leases.service';
   selector: 'app-add-lease',
   templateUrl: './add-lease.component.html',
   styleUrls: ['./add-lease.component.scss'],
+  animations: [bounceIn]
 })
 export class AddLeaseComponent {
   public addLeaseForm;

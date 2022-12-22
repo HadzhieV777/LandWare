@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { fadeIn } from 'src/app/shared/animations/fade-animations';
 import { AuthService } from 'src/app/shared/services/auth-service.service';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
+  animations: [fadeIn]
 })
 export class ProfileComponent {
   showEditMode = false;

@@ -32,7 +32,7 @@ export class EstateDetailsComponent implements OnInit {
     type: '',
     price: 0,
     rented: true,
-    maintenance: false,
+    maintenance: true,
   };
 
   showEditMode = false;
@@ -40,10 +40,13 @@ export class EstateDetailsComponent implements OnInit {
 
   constructor(private estateService: EstateService) {}
 
-  isRentChecked = this.currentEstate.rented;
-  isMaintenanceChecked = this.currentEstate.maintenance;
+  isRentChecked : boolean | undefined;
+  isMaintenanceChecked : boolean | undefined;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.isRentChecked = this.currentEstate.rented;
+    this.isMaintenanceChecked = this.currentEstate.maintenance;
+  }
 
   ngOnChanges(): void {
     this.currentEstate = { ...this.estate };

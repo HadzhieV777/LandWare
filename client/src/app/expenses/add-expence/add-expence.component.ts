@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { bounceIn } from 'src/app/shared/animations/bounce';
 import { AuthService } from 'src/app/shared/services/auth-service.service';
 import { ExpencesService } from 'src/app/shared/services/expences.service';
-import { fadeIn } from 'src/app/shared/animations/fade-animations';
 
 @Component({
   selector: 'app-add-expence',
   templateUrl: './add-expence.component.html',
   styleUrls: ['./add-expence.component.scss'],
-  animations: [fadeIn]
+  animations: [bounceIn]
 })
 export class AddExpenceComponent {
   public addExpenceForm;

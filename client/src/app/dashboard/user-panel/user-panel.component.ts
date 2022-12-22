@@ -5,13 +5,13 @@ import { EstateService } from 'src/app/shared/services/estate.service';
 import { map } from 'rxjs';
 import { Expence } from 'src/app/shared/models/expence.model';
 import { ExpencesService } from 'src/app/shared/services/expences.service';
-import { bounceIn } from 'src/app/shared/animations/bounce';
+import { fadeIn } from 'src/app/shared/animations/fade-animations';
 
 @Component({
   selector: 'app-user-panel',
   templateUrl: './user-panel.component.html',
   styleUrls: ['./user-panel.component.scss'],
-  animations: [bounceIn],
+  animations: [fadeIn],
 })
 export class UserPanelComponent {
   arrayEstate?: Estate[];

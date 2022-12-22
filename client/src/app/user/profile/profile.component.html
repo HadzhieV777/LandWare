@@ -1,93 +1,96 @@
-<div class="heading">
-  <h1 class="title">User Info</h1>
-  <!-- <p class="text">Scale your business easily. With our selected tools</p> -->
-</div>
-<div class="profile">
-  <img
-    src="../../../assets/images/profile.png"
-    alt="default user"
-  />
-  <h3>User Info</h3>
-
-  <!-- USER INFO -->
-  <ng-container>
-    <div>
-      <div class="flex" *ngIf="authService.user.displayName">
-        <p>Name:</p>
-        <p>{{ authService.user.displayName }}</p>
+<div class="view-cnt" @fadeIn>
+  <div class="heading">
+    <h1 class="title">User Info</h1>
+    <!-- <p class="text">Scale your business easily. With our selected tools</p> -->
+  </div>
+  <div class="profile">
+    <img
+      src="../../../assets/images/profile.png"
+      alt="default user"
+    />
+    <h3>User Info</h3>
+  
+    <!-- USER INFO -->
+    <ng-container>
+      <div>
+        <div class="flex" *ngIf="authService.user.displayName">
+          <p>Name:</p>
+          <p>{{ authService.user.displayName }}</p>
+        </div>
+        <div class="flex"></div>
+        <div class="flex" *ngIf="authService.user.email">
+          <p>Email:</p>
+          <p>{{ authService.user.email }}</p>
+        </div>
       </div>
-      <div class="flex"></div>
-      <div class="flex" *ngIf="authService.user.email">
-        <p>Email:</p>
-        <p>{{ authService.user.email }}</p>
-      </div>
-    </div>
-    <!-- <button class="edit-button" (click)="toggleEditMode()">Edit</button> -->
-  </ng-container>
-
-  <!-- USER FORM -->
-  <!-- <ng-container *ngIf="showEditMode">
-    <form [formGroup]="editProfileForm">
-      <input
-        type="text"
-        formControlName="displayName"
-        placeholder="{{ authService.user.displayName }}"
-      />
-      <ng-container *ngIf="editProfileForm.get('displayName')?.touched">
-        <span
-          class="error"
-          *ngIf="editProfileForm.get('displayName')?.errors?.['minlength']"
-        >
-          Full name must have at least 2 characters!
-        </span>
-        <span
-          class="error"
-          *ngIf="editProfileForm.get('displayName')?.errors?.['required']"
-        >
-          Full name is required!
-        </span>
-      </ng-container>
-
-      <input
-        type="email"
-        formControlName="email"
-        placeholder="{{ authService.user.email }}"
-        id="email"
-      />
-      <ng-container *ngIf="editProfileForm.get('email')?.touched">
-        <span
-          class="error"
-          *ngIf="editProfileForm.get('email')?.errors?.['required']"
-        >
-          Email is required!
-        </span>
-        <span
-          class="error"
-          *ngIf="editProfileForm.get('email')?.errors?.['email']"
-        >
-          Invalid email
-        </span>
-      </ng-container>
-
-      <input
-        type="number"
-        formControlName="photoURL"
-        placeholder="{{ authService.user.photoURL }}"
-        id="photoURL"
-      />
-
-      <div class="buttons-grup">
-        <button class="red-button" type="button" (click)="toggleEditMode()">
-          Cancel
-        </button>
-        <button
-          class="green-button"
-          type="submit"
-          [disabled]="this.editProfileForm.invalid"
-        >
-          Save
-        </button>
-      </div>
-    </form>
-  </ng-container> -->
+      <!-- <button class="edit-button" (click)="toggleEditMode()">Edit</button> -->
+    </ng-container>
+  
+    <!-- USER FORM -->
+    <!-- <ng-container *ngIf="showEditMode">
+      <form [formGroup]="editProfileForm">
+        <input
+          type="text"
+          formControlName="displayName"
+          placeholder="{{ authService.user.displayName }}"
+        />
+        <ng-container *ngIf="editProfileForm.get('displayName')?.touched">
+          <span
+            class="error"
+            *ngIf="editProfileForm.get('displayName')?.errors?.['minlength']"
+          >
+            Full name must have at least 2 characters!
+          </span>
+          <span
+            class="error"
+            *ngIf="editProfileForm.get('displayName')?.errors?.['required']"
+          >
+            Full name is required!
+          </span>
+        </ng-container>
+  
+        <input
+          type="email"
+          formControlName="email"
+          placeholder="{{ authService.user.email }}"
+          id="email"
+        />
+        <ng-container *ngIf="editProfileForm.get('email')?.touched">
+          <span
+            class="error"
+            *ngIf="editProfileForm.get('email')?.errors?.['required']"
+          >
+            Email is required!
+          </span>
+          <span
+            class="error"
+            *ngIf="editProfileForm.get('email')?.errors?.['email']"
+          >
+            Invalid email
+          </span>
+        </ng-container>
+  
+        <input
+          type="number"
+          formControlName="photoURL"
+          placeholder="{{ authService.user.photoURL }}"
+          id="photoURL"
+        />
+  
+        <div class="buttons-grup">
+          <button class="red-button" type="button" (click)="toggleEditMode()">
+            Cancel
+          </button>
+          <button
+            class="green-button"
+            type="submit"
+            [disabled]="this.editProfileForm.invalid"
+          >
+            Save
+          </button>
+        </div>
+      </form>
+    </ng-container> -->
+  </div>
+  
 </div>

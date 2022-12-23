@@ -1,0 +1,65 @@
+@import '../shared';
+
+#benefits {
+    & .benefits-img {
+        width: 100%;
+        border-radius: .7rem;
+    }
+
+    & .benefits-txt {
+        text-align: center;
+    }
+}
+
+#benefits {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    & .benefits-img {
+        width: 45vw;
+    }
+
+    & .benefits-txt {
+        text-align: left;
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    #benefits {
+        gap: 3rem;
+
+        & .benefits-img {
+            width: 35vw;
+            height: 45vh;
+        }
+
+        & .benefits-txt {
+            margin-top: 2rem;
+
+            & .paragraph {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width: 1920px) {
+    #benefits {
+        gap: 3rem;
+
+        & .benefits-img {
+            width: 25vw;
+            height: 40vh;
+        }
+
+        & .benefits-txt {
+
+            & .paragraph {
+                font-size: 1rem;
+            }
+        }
+    }
+}

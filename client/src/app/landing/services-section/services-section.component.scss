@@ -1,0 +1,115 @@
+#services {
+    $services-bg-clr: #D9ECFE;
+
+    background-color: $services-bg-clr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    & .services-cnt {
+
+
+        & .service {
+
+            & .service-ico {
+                width: 7.6rem;
+                height: 7.1rem;
+            }
+
+            & .service-paragraph {
+                padding-bottom: .5rem;
+            }
+        }
+
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    #services {
+
+        & .title {
+            margin-top: 4rem;
+            margin-bottom: 4rem;
+            width: 50%;
+        }
+
+        & .services-cnt {
+            padding-left: 2rem;
+            padding-right: 2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+
+            & .service {
+
+
+                & .service-ico {
+                    width: 4.8rem;
+                    height: 4.2rem;
+                }
+
+                & .service-heading {
+                    font-size: .9rem;
+                }
+
+                & .service-paragraph {
+                    font-size: .7rem;
+                }
+            }
+
+        }
+
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #services {
+        & .title {
+            width: 50%;
+        }
+
+        & .services-cnt {
+            & .service {
+                & .service-ico {
+                    width: 5.5rem;
+                    height: 5rem;
+                }
+
+                & .service-heading {
+                    font-size: 1.2rem;
+                }
+
+                & .service-paragraph {
+                    font-size: .9rem;
+                }
+            }
+
+        }
+
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    #services {
+        & .services-cnt {
+            & .service {
+                & .service-ico {
+                    width: 6rem;
+                    height: 5.8rem;
+                }
+
+                & .service-heading {
+                    font-size: 1.2rem;
+                }
+
+                & .service-paragraph {
+                    font-size: 1rem;
+                }
+            }
+
+        }
+    }
+
+}

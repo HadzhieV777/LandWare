@@ -10,12 +10,13 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
-import { HomeModule } from './home/home.module';
 import { UserModule } from './user/user.module';
+import { CoreModule } from './core/core.module'
 import { DashboardModule } from './dashboard/dashboard.module';
 import { LeasesModule } from './leases/leases.module';
 import { AuthService } from './shared/services/auth-service.service';
 import { SharedModule } from './shared/shared.module';
+import { LandingModule } from './landing/landing.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -40,8 +41,9 @@ import { SharedModule } from './shared/shared.module';
     
 
     // Application modules
+    CoreModule,
     SharedModule,
-    HomeModule,
+    LandingModule,
     UserModule,
     DashboardModule,
     LeasesModule,

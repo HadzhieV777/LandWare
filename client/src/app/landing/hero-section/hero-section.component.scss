@@ -1,0 +1,114 @@
+@import '../shared';
+
+// HERO SECTION 
+#hero {
+    text-align: center;
+    margin: 1rem auto;
+    color: $clr-black-font;
+
+    .hero-banner {
+        width: 100%;
+    }
+
+    & .hero-txt {
+        & .hero-btn {
+            margin: 1rem;
+            background-color: $clr-blue-main;
+            border-color: $clr-blue-main;
+            color: $clr-white;
+            transition: all .5s;
+            width: 7.3rem;
+            height: 2.6rem;
+            font-size: 1.2rem;
+            border-radius: .2rem;
+
+            &:hover {
+                background-color: $clr-purp-detail;
+                border-color: $clr-purp-detail;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    // HERO SECTION
+    #hero {
+        display: flex;
+
+        & .hero-banner {
+            width: 70vw;
+            height: 45vh;
+        }
+
+        & .hero-txt {
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            justify-content: left;
+            text-align: left;
+
+            & .title {
+                margin-top: 4rem;
+            }
+
+            & .paragraph {
+                font-size: .8rem;
+            }
+
+            & .hero-btn {
+                margin: 0;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #hero {
+
+        & .hero-banner {
+            height: 55vh;
+        }
+
+        & .hero-txt {
+
+            & .paragraph {
+                font-size: .9rem;
+            }
+
+            & .hero-btn {
+                width: 8.5rem;
+                height: 3.2rem;
+                font-size: 1.3rem;
+                border-radius: .2rem;
+
+            }
+        }
+    }
+
+
+}
+
+@media screen and (min-width: 1440px) {
+    #hero {
+
+        & .hero-banner {
+            height: 66vh;
+        }
+
+    }
+
+}
+
+@media screen and (min-width: 1920px) {
+    #hero {
+
+        & .hero-banner {
+            height: 50vh;
+            width: 28vw
+        }
+
+    }
+
+}

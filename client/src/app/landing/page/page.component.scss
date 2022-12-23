@@ -1,0 +1,100 @@
+@import '../shared';
+
+// Main 
+
+.title {
+
+    & .blue {
+        color: $clr-blue-main;
+    }
+
+    & .purp {
+        color: $clr-purp-detail;
+    }
+}
+
+.paragraph {
+    line-height: 1.4;
+    letter-spacing: .5px;
+}
+
+.section {
+    margin-bottom: 3rem;
+}
+
+
+@media screen and (min-width: 768px) {
+    .main-cnt {
+        margin: 0 2.3rem;
+    }
+
+
+    .title {
+        font-size: 1.2rem;
+        line-height: 1.2;
+        letter-spacing: 1.4;
+        margin: 0;
+    }
+
+    .paragraph {
+        font-size: .9rem;
+        line-height: 1.3;
+        padding: 0;
+        letter-spacing: .5px;
+    }
+
+    .section {
+        margin-bottom: 6rem;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    .main-cnt {
+        margin: 0 4rem;
+    }
+
+    .title {
+        margin: 0;
+        font-size: 1.7rem;
+        letter-spacing: 2.4;
+        line-height: 1.2;
+        font-weight: 800;
+    }
+
+    .paragraph {
+        font-size: 1rem;
+    }
+
+    .section {
+        max-width: 1024px;
+        margin: 0 auto;
+        margin-bottom: 6rem;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .main-cnt {
+        margin: 0 5rem;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .paragraph {
+        font-size: 1.6rem;
+    }
+
+}
+
+@media screen and (min-width: 1920px) {
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .paragraph {
+        font-size: 1.6rem;
+    }
+}

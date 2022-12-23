@@ -9,7 +9,7 @@ import { Faq } from '../models/faq.model';
 @Injectable({
   providedIn: 'root'
 })
-export class ExpencesService {
+export class FaqService {
 
   private dbPath = '/faq';
 

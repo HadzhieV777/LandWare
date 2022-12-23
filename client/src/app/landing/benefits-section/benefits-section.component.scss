@@ -4,6 +4,7 @@
     & .benefits-img {
         width: 100%;
         border-radius: .7rem;
+        display: none;
     }
 
     & .benefits-txt {
@@ -23,6 +24,14 @@
     & .benefits-txt {
         text-align: left;
         margin-top: 1rem;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    #benefits {
+        & .benefits-img {
+            display: block;
+        }
     }
 }
 

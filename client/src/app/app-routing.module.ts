@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LandingComponent } from './home/landing/landing.component';
-import { NotFoundComponent } from './home/pages/not-found/not-found.component';
+import { NotFoundComponent } from './core/pages/not-found/not-found.component';
+import { PageComponent } from './landing/page/page.component';
 
 // guard
 import { AuthGuard } from './shared/guards/auth.guard';
@@ -9,7 +9,7 @@ import { AuthGuard } from './shared/guards/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    component: LandingComponent,
+    component: PageComponent,
   },
   {
     path: 'auth',
@@ -17,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: 'main',
-    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
+    loadChildren: () => import('./core/core.module').then((m) => m.CoreModule),
   },
   {
     path: 'dashboard',

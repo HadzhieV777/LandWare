@@ -1,1 +1,22 @@
-<p>faq-section works!</p>
+<section id="faq" class="section">
+  <h2 class="title">Frequently asked <span class="blue">questions</span></h2>
+  <ul class="questions-cnt">
+    <li class="question" *ngFor="let question of faqArray; index as i">
+      <h3 class="q-title">
+        {{ question.question }}
+        <span class="dropdown">
+          <img
+            src="../../../assets/icons/drop-down.png"
+            alt="dropdown icon"
+            (click)="showHiddenData(i)"
+            class="dropdown-icon"
+          />
+        </span>
+      </h3>
+      <div class="divider"></div>
+      <p class="q-paragraph" *ngIf="question.hideData" @fadeIn @fadeOut>
+        {{ question.answer }}
+      </p>
+    </li>
+  </ul>
+</section>

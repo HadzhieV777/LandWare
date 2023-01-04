@@ -1,11 +1,4 @@
-$clr-white-dark: rgb(207, 205, 205);
-$clr-blue: #3F6FD7;
-$clr-white: #fff;
-
-* {
-    margin: 0;
-    padding: 0;
-}
+@import '../shared.scss';
 
 #add-lease {
     width: 90%;

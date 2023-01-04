@@ -1,12 +1,4 @@
-$clr-blue: #3F6FD7;
-$clr-white: #ffffff;
-$clr-red: crimson;
-$clr-green: limegreen;
-$clr-blue: #3F6FD7;
-
-$black: #000000;
-$gray: rgba($black, 0.6);
-$clr-white-dark: rgb(207, 205, 205);
+@import '../shared.scss';
 
 button {
     border-radius: 0.3em;

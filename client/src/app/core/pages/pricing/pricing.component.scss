@@ -1,6 +1,7 @@
 $clr-black-font: #2A2A2A;
 $clr-blue-main: #03A4ED;
 $clr-purp-detail: #E00043;
+$clr-hover: #03a3ed2a;
 $clr-white: #ffffff;
 
 .blue {
@@ -10,6 +11,8 @@ $clr-white: #ffffff;
 
 .pricing-tables {
     padding-top: 8.1rem;
+    width: 70%;
+    margin: 0 auto;
 
     & .section-heading {
         text-align: center;
@@ -213,6 +216,13 @@ $clr-white: #ffffff;
         }
     }
 
+}
+
+.pricing-item-regular,
+.pricing-item-pro {
+    &:hover {
+        background-color: $clr-hover;
+    }
 }
 
 

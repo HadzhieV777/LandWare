@@ -1,3 +1,5 @@
+@import '../shared.scss';
+
 $clr-primary: #03A4ED;
 $clr-secondary: #3F6FD7;
 $clr-lightblue: #D9ECFE;
@@ -5,7 +7,6 @@ $clr-detail: #E00043;
 $clr-green: limegreen;
 $clr-white: #ffffff;
 $clr-black-font: #2A2A2A;
-
 
 .function-icon,
 .metric-icon {

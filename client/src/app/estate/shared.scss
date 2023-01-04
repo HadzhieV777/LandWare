@@ -1,0 +1,24 @@
+$clr-red: crimson;
+$clr-green: limegreen;
+$clr-yellow: #ffdf00;
+
+$black: #000000;
+$gray: rgba($black, 0.6);
+$clr-white-dark: rgb(207, 205, 205);
+
+$clr-white-dark: rgb(207, 205, 205);
+$clr-blue: #3F6FD7;
+$clr-white: #fff;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+@media screen and (max-width: 668px) {
+    .section {
+        margin-left: 4rem;
+        margin-right: .2rem;
+    }
+}

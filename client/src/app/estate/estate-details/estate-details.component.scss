@@ -1,12 +1,4 @@
-$clr-white: #ffffff;
-$clr-blue: #3F6FD7;
-$clr-red: crimson;
-$clr-green: limegreen;
-$clr-yellow: #ffdf00;
-
-$black: #000000;
-$gray: rgba($black, 0.6);
-$clr-white-dark: rgb(207, 205, 205);
+@import '../shared.scss';
 
 input {
     outline: none;
